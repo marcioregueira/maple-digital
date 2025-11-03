@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo-soluc-digital.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,9 +30,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-background font-bold text-2xl">S</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Soluc Digital" 
+                className="h-12 w-auto"
+              />
               <h3 className="text-3xl font-bold text-primary">
                 Soluc Digital
               </h3>
