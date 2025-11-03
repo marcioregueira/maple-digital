@@ -1,132 +1,171 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    projectType: "",
     message: "",
   });
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    
     toast({
       title: "Mensagem enviada!",
       description: "Entraremos em contato em breve.",
     });
+    setFormData({ name: "", email: "", projectType: "", message: "" });
+  };
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32">
+    <section id="contato" className="py-20 md:py-32 bg-gradient-to-b from-secondary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Entre em <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Contato</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
+            Entre em <span className="text-primary">Contato</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Pronto para transformar sua presença digital? Fale conosco e solicite seu orçamento
+            Estamos prontos para transformar sua ideia em realidade digital
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact Info Cards */}
-          <div className="lg:col-span-1 space-y-4">
-            <Card className="border-2 hover:border-primary/50 transition-all animate-scale-in">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* CTA Card */}
+          <div className="space-y-6 animate-fade-in">
+            <Card className="border border-primary/30 bg-card/50 backdrop-blur shadow-2xl shadow-primary/10">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-2">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-lg">E-mail</CardTitle>
+                <CardTitle className="text-2xl md:text-3xl text-foreground">
+                  Vamos começar seu projeto?
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription>contato@solucdigital.com.br</CardDescription>
-              </CardContent>
-            </Card>
+              <CardContent className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Preencha o formulário ao lado ou entre em contato diretamente pelo WhatsApp. 
+                  Responderemos o mais rápido possível com um orçamento personalizado.
+                </p>
+                
+                <Button
+                  className="w-full bg-[#25D366] hover:bg-[#1fb855] text-white text-lg py-6"
+                  onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
+                >
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Falar no WhatsApp
+                </Button>
 
-            <Card className="border-2 hover:border-primary/50 transition-all animate-scale-in" style={{ animationDelay: "0.1s" }}>
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-2">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle className="text-lg">Telefone</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>(11) 99999-9999</CardDescription>
-              </CardContent>
-            </Card>
+                <div className="space-y-4 pt-6 border-t border-border">
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <a href="mailto:contato@solucdigital.com" className="text-foreground hover:text-primary transition-colors">
+                        contato@solucdigital.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Telefone</p>
+                      <a href="tel:+5511999999999" className="text-foreground hover:text-primary transition-colors">
+                        (11) 99999-9999
+                      </a>
+                    </div>
+                  </div>
 
-            <Card className="border-2 hover:border-primary/50 transition-all animate-scale-in" style={{ animationDelay: "0.2s" }}>
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-2">
-                  <MapPin className="w-6 h-6 text-white" />
+                  <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Localização</p>
+                      <p className="text-foreground">São Paulo, SP - Brasil</p>
+                    </div>
+                  </div>
                 </div>
-                <CardTitle className="text-lg">Localização</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>São Paulo, SP - Brasil</CardDescription>
               </CardContent>
             </Card>
           </div>
 
           {/* Contact Form */}
-          <Card className="lg:col-span-2 border-2 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <Card className="border border-border bg-card/50 backdrop-blur animate-scale-in">
             <CardHeader>
-              <CardTitle className="text-2xl">Envie sua mensagem</CardTitle>
-              <CardDescription>
-                Preencha o formulário abaixo e nossa equipe entrará em contato
-              </CardDescription>
+              <CardTitle className="text-2xl text-foreground">Envie sua mensagem</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-foreground">Nome</Label>
                   <Input
-                    placeholder="Seu nome"
+                    id="name"
+                    placeholder="Seu nome completo"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="h-12"
+                    onChange={(e) => handleChange("name", e.target.value)}
+                    required
+                    className="bg-background/50 border-border"
                   />
                 </div>
-                <div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-foreground">E-mail</Label>
                   <Input
+                    id="email"
                     type="email"
-                    placeholder="Seu e-mail"
+                    placeholder="seu@email.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="h-12"
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    required
+                    className="bg-background/50 border-border"
                   />
                 </div>
-                <div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="projectType" className="text-foreground">Tipo de Projeto</Label>
+                  <Select value={formData.projectType} onValueChange={(value) => handleChange("projectType", value)}>
+                    <SelectTrigger className="bg-background/50 border-border">
+                      <SelectValue placeholder="Selecione o tipo de projeto" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="website">Site Institucional</SelectItem>
+                      <SelectItem value="ecommerce">Loja Virtual</SelectItem>
+                      <SelectItem value="landing">Landing Page</SelectItem>
+                      <SelectItem value="app">Aplicativo</SelectItem>
+                      <SelectItem value="other">Outro</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground">Mensagem</Label>
                   <Textarea
-                    placeholder="Sua mensagem"
+                    id="message"
+                    placeholder="Conte-nos sobre seu projeto..."
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="min-h-[150px] resize-none"
+                    onChange={(e) => handleChange("message", e.target.value)}
+                    required
+                    rows={5}
+                    className="bg-background/50 border-border resize-none"
                   />
                 </div>
-                <Button type="submit" variant="hero" size="lg" className="w-full">
+
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-background text-lg py-6">
                   Enviar Mensagem
                 </Button>
               </form>

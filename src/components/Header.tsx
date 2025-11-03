@@ -1,82 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+      <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <a href="#inicio" className="flex items-center gap-2">
+            <div className="text-2xl font-bold text-primary">
               Soluc Digital
-            </span>
-          </div>
+            </div>
+          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#inicio" className="text-foreground hover:text-primary transition-colors">
+              Início
+            </a>
+            <a href="#servicos" className="text-foreground hover:text-primary transition-colors">
               Serviços
-            </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+            </a>
+            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">
               Portfólio
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+            </a>
+            <a href="#sobre" className="text-foreground hover:text-primary transition-colors">
               Sobre
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
+            </a>
+            <a href="#contato" className="text-foreground hover:text-primary transition-colors">
               Contato
-            </button>
-          </nav>
-
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Button variant="cta" onClick={() => scrollToSection("contact")}>
+            </a>
+            <Button className="bg-primary hover:bg-primary/90 text-background" size="sm">
               Solicitar Orçamento
             </Button>
           </div>
@@ -84,50 +41,59 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 flex flex-col space-y-4 animate-fade-in">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-left"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-left"
-            >
-              Serviços
-            </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-left"
-            >
-              Portfólio
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-left"
-            >
-              Sobre
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors font-medium text-left"
-            >
-              Contato
-            </button>
-            <Button variant="cta" onClick={() => scrollToSection("contact")} className="w-full">
-              Solicitar Orçamento
-            </Button>
-          </nav>
-        )}
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-sm transition-transform duration-300 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex flex-col gap-6 p-8">
+          <a
+            href="#inicio"
+            className="text-xl text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Início
+          </a>
+          <a
+            href="#servicos"
+            className="text-xl text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Serviços
+          </a>
+          <a
+            href="#portfolio"
+            className="text-xl text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Portfólio
+          </a>
+          <a
+            href="#sobre"
+            className="text-xl text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Sobre
+          </a>
+          <a
+            href="#contato"
+            className="text-xl text-foreground hover:text-primary transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contato
+          </a>
+          <Button className="w-full bg-primary hover:bg-primary/90 text-background" onClick={() => setIsMenuOpen(false)}>
+            Solicitar Orçamento
+          </Button>
+        </div>
       </div>
     </header>
   );
