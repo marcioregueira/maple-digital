@@ -3,40 +3,28 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "E-commerce Moda Elegante",
-    description: "Plataforma completa de vendas online com gestão de estoque e pagamentos integrados.",
+    title: "E-commerce Moda",
+    description: "Plataforma completa de vendas online com sistema de pagamento integrado",
     tags: ["React", "Node.js", "Stripe"],
-    category: "E-commerce",
+    category: "Loja Virtual",
   },
   {
-    title: "App Fitness Pro",
-    description: "Aplicativo mobile para acompanhamento de treinos e nutrição personalizada.",
+    title: "App Delivery",
+    description: "Aplicativo de delivery com rastreamento em tempo real",
     tags: ["React Native", "Firebase"],
-    category: "Mobile",
+    category: "Aplicativo Mobile",
   },
   {
-    title: "Landing Page Tech Startup",
-    description: "Página otimizada para conversão com integração de CRM e analytics avançado.",
-    tags: ["Next.js", "TailwindCSS"],
-    category: "Landing Page",
+    title: "Landing Page SaaS",
+    description: "Página de conversão otimizada para startup de tecnologia",
+    tags: ["Next.js", "Tailwind"],
+    category: "Marketing",
   },
   {
-    title: "Portal Corporativo",
-    description: "Sistema web para gestão interna com dashboard e relatórios em tempo real.",
-    tags: ["Vue.js", "PostgreSQL"],
-    category: "Sistema Web",
-  },
-  {
-    title: "Site Institucional Advocacia",
-    description: "Website profissional com blog, formulários de contato e área restrita para clientes.",
-    tags: ["WordPress", "SEO"],
-    category: "Institucional",
-  },
-  {
-    title: "App de Delivery",
-    description: "Plataforma completa para pedidos online com rastreamento em tempo real.",
-    tags: ["Flutter", "Node.js"],
-    category: "Mobile",
+    title: "Portal Imobiliário",
+    description: "Sistema completo de gestão e divulgação de imóveis",
+    tags: ["React", "PostgreSQL"],
+    category: "Website",
   },
 ];
 
@@ -53,7 +41,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}

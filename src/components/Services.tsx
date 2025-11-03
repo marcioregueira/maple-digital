@@ -1,11 +1,16 @@
-import { Globe, Smartphone, Rocket, Briefcase } from "lucide-react";
+import { Globe, Smartphone, Rocket, Headphones } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
     icon: Globe,
-    title: "Criação de Sites Profissionais",
+    title: "Criação de Sites",
     description: "Sites modernos, responsivos e otimizados para conversão. Do institucional ao e-commerce, desenvolvemos a solução perfeita para sua marca.",
+  },
+  {
+    icon: Rocket,
+    title: "Landing Page",
+    description: "Páginas de alta conversão com design estratégico e otimização para SEO. Aumente suas vendas e capture mais leads.",
   },
   {
     icon: Smartphone,
@@ -13,14 +18,9 @@ const services = [
     description: "Apps nativos e híbridos para iOS e Android. Transforme sua ideia em um aplicativo funcional e intuitivo.",
   },
   {
-    icon: Rocket,
-    title: "Landing Pages Otimizadas",
-    description: "Páginas de alta conversão com design estratégico e otimização para SEO. Aumente suas vendas e capture mais leads.",
-  },
-  {
-    icon: Briefcase,
-    title: "Consultoria Digital",
-    description: "Análise e estratégias personalizadas para fortalecer sua presença online. Da identidade visual ao marketing digital.",
+    icon: Headphones,
+    title: "Suporte e Manutenção",
+    description: "Acompanhamento contínuo do seu projeto digital. Garantimos atualizações, segurança e suporte técnico especializado.",
   },
 ];
 

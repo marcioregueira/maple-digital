@@ -1,115 +1,115 @@
-import { Facebook, Instagram, Linkedin, Twitter, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
+  
   return (
-    <footer className="bg-gradient-to-br from-foreground to-foreground/95 text-background py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <span className="text-xl font-bold">Soluc Digital</span>
-            </div>
-            <p className="text-background/70 mb-4 max-w-md">
-              Transformando ideias em presença digital. Criação de sites, landing pages e aplicativos 
-              personalizados para impulsionar seu negócio.
+    <footer className="bg-card border-t">
+      <div className="container mx-auto px-4 py-12">
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Soluc Digital
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Criando soluções digitais para pequenos negócios, pousadas e empreendedores. 
+              Transformamos ideias em presença digital.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex gap-3">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
-                aria-label="Facebook"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5 text-primary" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
-                aria-label="Instagram"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5 text-primary" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
-                aria-label="LinkedIn"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-primary flex items-center justify-center transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
+                <Linkedin className="w-5 h-5 text-primary" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Links Rápidos</h3>
+            <h4 className="font-semibold mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-background/70 hover:text-secondary transition-colors">
-                  Home
+                <a href="#home" className="text-muted-foreground hover:text-primary transition-colors">
+                  Início
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-background/70 hover:text-secondary transition-colors">
+                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
                   Serviços
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-background/70 hover:text-secondary transition-colors">
+                <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors">
                   Portfólio
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-background/70 hover:text-secondary transition-colors">
+                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
                   Sobre
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-background/70 hover:text-secondary transition-colors">
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
                   Contato
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contato</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-background/70">
+            <h4 className="font-semibold mb-4">Contato</h4>
+            <div className="space-y-3">
+              <a
+                href="mailto:contato@solucdigital.com"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Mail className="w-4 h-4" />
-                <span>contato@solucdigital.com.br</span>
-              </li>
-              <li className="text-background/70">(11) 99999-9999</li>
-              <li className="text-background/70">São Paulo, SP - Brasil</li>
-            </ul>
-            <a
-              href="https://wa.me/5511999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold hover:shadow-lg transition-all"
+                contato@solucdigital.com
+              </a>
+              <a
+                href="tel:+5511999999999"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                (11) 99999-9999
+              </a>
+            </div>
+            <Button
+              className="mt-4 w-full bg-[#25D366] hover:bg-[#1fb855] text-white"
+              onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
             >
-              WhatsApp
-            </a>
+              <Phone className="mr-2 w-4 h-4" />
+              Fale no WhatsApp
+            </Button>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/20 pt-8 text-center">
-          <p className="text-background/60 text-sm">
-            © {currentYear} Soluc Digital. Todos os direitos reservados.
-          </p>
+        <div className="border-t pt-6 text-center text-sm text-muted-foreground">
+          <p>© {currentYear} Soluc Digital. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
