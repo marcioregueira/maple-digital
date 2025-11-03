@@ -19,7 +19,7 @@ const Footer = () => {
   ];
   
   return (
-    <footer className="relative bg-black/50 border-t border-border overflow-hidden">
+    <footer className="relative bg-[#0a0a0a] border-t border-border overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
