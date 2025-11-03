@@ -4,7 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,8 +20,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
+      title: "✨ Mensagem enviada!",
+      description: "Entraremos em contato em até 24 horas.",
     });
     setFormData({ name: "", email: "", projectType: "", message: "" });
   };
@@ -30,101 +30,155 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email",
+      value: "contato@solucdigital.com",
+      link: "mailto:contato@solucdigital.com",
+      description: "Resposta em até 24h",
+    },
+    {
+      icon: Phone,
+      title: "Telefone",
+      value: "(11) 99999-9999",
+      link: "tel:+5511999999999",
+      description: "Seg - Sex, 9h às 18h",
+    },
+    {
+      icon: MapPin,
+      title: "Localização",
+      value: "São Paulo, SP",
+      link: null,
+      description: "Brasil",
+    },
+  ];
+
   return (
-    <section id="contato" className="py-20 md:py-32 bg-gradient-to-b from-secondary/5 to-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">
-            Entre em <span className="text-primary">Contato</span>
+    <section id="contato" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/5" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
+            <span className="text-sm font-semibold text-primary">Contato</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+            Vamos <span className="text-primary">Conversar</span>?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Estamos prontos para transformar sua ideia em realidade digital
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* CTA Card */}
+          {/* Left Column - CTA and Contact Info */}
           <div className="space-y-6 animate-fade-in">
-            <Card className="border border-primary/30 bg-card/50 backdrop-blur shadow-2xl shadow-primary/10">
-              <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl text-foreground">
-                  Vamos começar seu projeto?
+            {/* Main CTA Card */}
+            <Card className="border-2 border-primary/30 bg-gradient-to-br from-card/90 to-card/50 backdrop-blur shadow-2xl shadow-primary/10 overflow-hidden relative">
+              {/* Decorative gradient */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+              
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-3xl md:text-4xl text-foreground">
+                  Pronto para começar?
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  Preencha o formulário ao lado ou entre em contato diretamente pelo WhatsApp. 
+              <CardContent className="space-y-6 relative z-10">
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  Preencha o formulário ou entre em contato pelo WhatsApp. 
                   Responderemos o mais rápido possível com um orçamento personalizado.
                 </p>
                 
+                {/* WhatsApp Button */}
                 <Button
-                  className="w-full bg-[#25D366] hover:bg-[#1fb855] text-white text-lg py-6"
+                  className="w-full bg-[#25D366] hover:bg-[#1fb855] text-white text-lg py-7 shadow-lg shadow-[#25D366]/30"
                   onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
                 >
-                  <MessageCircle className="mr-2 w-5 h-5" />
+                  <MessageCircle className="mr-2 w-6 h-6" />
                   Falar no WhatsApp
                 </Button>
 
-                <div className="space-y-4 pt-6 border-t border-border">
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:contato@solucdigital.com" className="text-foreground hover:text-primary transition-colors">
-                        contato@solucdigital.com
-                      </a>
-                    </div>
+                {/* Benefits */}
+                <div className="space-y-3 pt-4">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>Resposta em até 24 horas</span>
                   </div>
-                  
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Telefone</p>
-                      <a href="tel:+5511999999999" className="text-foreground hover:text-primary transition-colors">
-                        (11) 99999-9999
-                      </a>
-                    </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>Orçamento gratuito e sem compromisso</span>
                   </div>
-
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Localização</p>
-                      <p className="text-foreground">São Paulo, SP - Brasil</p>
-                    </div>
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>Consultoria inicial gratuita</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Contact Info Cards */}
+            <div className="grid gap-4">
+              {contactInfo.map((info, index) => (
+                <Card
+                  key={index}
+                  className="border border-border bg-card/50 backdrop-blur hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <info.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm text-muted-foreground mb-1">{info.title}</p>
+                        {info.link ? (
+                          <a 
+                            href={info.link} 
+                            className="text-foreground font-medium hover:text-primary transition-colors"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-foreground font-medium">{info.value}</p>
+                        )}
+                        <p className="text-xs text-muted-foreground mt-1">{info.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
-          {/* Contact Form */}
-          <Card className="border border-border bg-card/50 backdrop-blur animate-scale-in">
+          {/* Right Column - Contact Form */}
+          <Card className="border border-border bg-card/50 backdrop-blur shadow-xl animate-scale-in">
             <CardHeader>
-              <CardTitle className="text-2xl text-foreground">Envie sua mensagem</CardTitle>
+              <CardTitle className="text-3xl text-foreground flex items-center gap-2">
+                <Send className="w-7 h-7 text-primary" />
+                Envie sua mensagem
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Preencha o formulário abaixo e nossa equipe entrará em contato
+              </p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground">Nome</Label>
+                  <Label htmlFor="name" className="text-foreground font-medium">Nome Completo</Label>
                   <Input
                     id="name"
-                    placeholder="Seu nome completo"
+                    placeholder="João Silva"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
                     required
-                    className="bg-background/50 border-border"
+                    className="bg-background/50 border-border h-12"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-foreground">E-mail</Label>
+                  <Label htmlFor="email" className="text-foreground font-medium">E-mail</Label>
                   <Input
                     id="email"
                     type="email"
@@ -132,40 +186,44 @@ const Contact = () => {
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     required
-                    className="bg-background/50 border-border"
+                    className="bg-background/50 border-border h-12"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="projectType" className="text-foreground">Tipo de Projeto</Label>
+                  <Label htmlFor="projectType" className="text-foreground font-medium">Tipo de Projeto</Label>
                   <Select value={formData.projectType} onValueChange={(value) => handleChange("projectType", value)}>
-                    <SelectTrigger className="bg-background/50 border-border">
+                    <SelectTrigger className="bg-background/50 border-border h-12">
                       <SelectValue placeholder="Selecione o tipo de projeto" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="website">Site Institucional</SelectItem>
                       <SelectItem value="ecommerce">Loja Virtual</SelectItem>
                       <SelectItem value="landing">Landing Page</SelectItem>
-                      <SelectItem value="app">Aplicativo</SelectItem>
+                      <SelectItem value="app">Aplicativo Mobile</SelectItem>
                       <SelectItem value="other">Outro</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-foreground">Mensagem</Label>
+                  <Label htmlFor="message" className="text-foreground font-medium">Mensagem</Label>
                   <Textarea
                     id="message"
-                    placeholder="Conte-nos sobre seu projeto..."
+                    placeholder="Conte-nos sobre seu projeto e objetivos..."
                     value={formData.message}
                     onChange={(e) => handleChange("message", e.target.value)}
                     required
-                    rows={5}
+                    rows={6}
                     className="bg-background/50 border-border resize-none"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-background text-lg py-6">
+                <Button 
+                  type="submit" 
+                  className="w-full bg-primary hover:bg-primary/90 text-background text-lg py-6 shadow-lg shadow-primary/30"
+                >
+                  <Send className="mr-2 w-5 h-5" />
                   Enviar Mensagem
                 </Button>
               </form>

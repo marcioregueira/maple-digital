@@ -6,34 +6,41 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-border/50">
+      <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-primary">
-              Soluc Digital
+          <a href="#inicio" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-background font-bold text-xl">S</span>
             </div>
+            <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+              Soluc Digital
+            </span>
           </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#inicio" className="text-foreground hover:text-primary transition-colors">
+            <a href="#inicio" className="text-foreground hover:text-primary transition-colors font-medium">
               Início
             </a>
-            <a href="#servicos" className="text-foreground hover:text-primary transition-colors">
+            <a href="#servicos" className="text-foreground hover:text-primary transition-colors font-medium">
               Serviços
             </a>
-            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">
+            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors font-medium">
               Portfólio
             </a>
-            <a href="#sobre" className="text-foreground hover:text-primary transition-colors">
+            <a href="#sobre" className="text-foreground hover:text-primary transition-colors font-medium">
               Sobre
             </a>
-            <a href="#contato" className="text-foreground hover:text-primary transition-colors">
+            <a href="#contato" className="text-foreground hover:text-primary transition-colors font-medium">
               Contato
             </a>
-            <Button className="bg-primary hover:bg-primary/90 text-background" size="sm">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-background shadow-lg shadow-primary/30" 
+              size="sm"
+              onClick={() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Solicitar Orçamento
             </Button>
           </div>
