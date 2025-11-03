@@ -11,12 +11,15 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center group">
+          <a href="#inicio" className="flex items-center gap-3 group">
             <img 
               src={logo} 
               alt="Soluc Digital - Soluções Digitais" 
               className="h-12 w-auto transition-opacity group-hover:opacity-80"
             />
+            <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+              Soluc Digital
+            </span>
           </a>
 
           {/* Desktop Menu - Centralizado */}
