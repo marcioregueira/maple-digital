@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-soluc-digital.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,13 +11,12 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-background font-bold text-xl">S</span>
-            </div>
-            <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
-              Soluc Digital
-            </span>
+          <a href="#inicio" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Soluc Digital - Soluções Digitais" 
+              className="h-12 w-auto transition-opacity group-hover:opacity-80"
+            />
           </a>
 
           {/* Desktop Menu */}
