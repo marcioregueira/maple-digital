@@ -19,8 +19,8 @@ const Header = () => {
             />
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Menu - Centralizado */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             <a href="#inicio" className="text-foreground hover:text-primary transition-colors font-medium">
               Início
             </a>
@@ -36,6 +36,10 @@ const Header = () => {
             <a href="#contato" className="text-foreground hover:text-primary transition-colors font-medium">
               Contato
             </a>
+          </div>
+
+          {/* Botão CTA - Direita */}
+          <div className="hidden md:block">
             <Button 
               className="bg-primary hover:bg-primary/90 text-background shadow-lg shadow-primary/30" 
               size="sm"
