@@ -15,7 +15,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Maple Digital - Soluções Digitais" 
-              className="h-10 w-auto transition-opacity group-hover:opacity-80"
+              className="h-14 w-auto transition-opacity group-hover:opacity-80"
             />
             <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
               Soluc Digital
