@@ -14,8 +14,8 @@ const Header = () => {
           <a href="#inicio" className="flex items-center gap-3 group">
             <img 
               src={logo} 
-              alt="Soluc Digital - Soluções Digitais" 
-              className="h-12 w-auto transition-opacity group-hover:opacity-80"
+              alt="Maple Digital - Soluções Digitais" 
+              className="h-10 w-auto transition-opacity group-hover:opacity-80"
             />
             <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
               Soluc Digital
