@@ -32,11 +32,11 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <img 
                 src={logo} 
-                alt="Soluc Digital" 
+                alt="Maple Digital" 
                 className="h-12 w-auto"
               />
               <h3 className="text-3xl font-bold text-primary">
-                Soluc Digital
+                Maple Digital
               </h3>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
@@ -118,7 +118,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} <span className="text-primary font-semibold">Soluc Digital</span> – Soluções Digitais. 
+              © {currentYear} <span className="text-primary font-semibold">Maple Digital</span> – Soluções Digitais. 
               Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm">

@@ -18,7 +18,7 @@ const Header = () => {
               className="h-14 w-auto transition-opacity group-hover:opacity-80"
             />
             <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
-              Soluc Digital
+              Maple Digital
             </span>
           </a>
 
