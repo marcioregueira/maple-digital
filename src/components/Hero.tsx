@@ -26,9 +26,9 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white leading-tight">
-            Criamos sua Presença Digital{" "}
-            <span className="text-primary">com Estratégia e Profissionalismo</span>
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-6 animate-fade-in text-white">
+            Criamos sua{" "}
+            <span className="text-primary">Presença Digital</span>
           </h1>
 
           {/* Subtitle */}
