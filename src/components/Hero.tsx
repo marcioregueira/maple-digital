@@ -56,23 +56,15 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100+</div>
-              <div className="text-sm text-gray-400">Projetos Entregues</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
-              <div className="text-sm text-gray-400">Clientes Satisfeitos</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">98%</div>
-              <div className="text-sm text-gray-400">Taxa de Satisfação</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-sm text-gray-400">Suporte Disponível</div>
+          {/* New Company Badge */}
+          <div className="mt-20 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="max-w-2xl mx-auto text-center px-6 py-8 rounded-2xl bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/20 backdrop-blur-sm">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                Nova no Mercado, Grandes Ambições
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Somos uma empresa jovem e inovadora, trazendo frescor e criatividade para o mundo digital. Cada projeto é uma oportunidade de provar nossa dedicação e excelência.
+              </p>
             </div>
           </div>
         </div>
