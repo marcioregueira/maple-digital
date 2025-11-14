@@ -105,7 +105,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-foreground">Equipe Experiente</span>
+                <span className="text-sm font-medium text-foreground">Atendimento Direto com o Especialista</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary" />
