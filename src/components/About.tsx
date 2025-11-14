@@ -81,9 +81,10 @@ const About = () => {
               Transformando ideias em soluções digitais de sucesso
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A <span className="text-primary font-semibold">Soluc Digital</span> nasceu com o propósito de 
-              democratizar o acesso às soluções digitais de qualidade. Criamos sites, landing pages e aplicativos 
-              personalizados para pequenos negócios, pousadas e empreendedores que desejam crescer no digital.
+              A <span className="text-primary font-semibold">Maple Digital</span> foi criada com o objetivo de 
+              oferecer soluções digitais acessíveis, modernas e personalizadas. Desenvolvo sites, landing pages e 
+              projetos sob medida para pequenos negócios, profissionais autônomos e empreendedores que desejam 
+              fortalecer sua presença online com qualidade e profissionalismo.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Utilizamos as tecnologias mais modernas do mercado, como React, Node.js, TypeScript e outras 
