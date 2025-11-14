@@ -1,6 +1,6 @@
 import { Target, Zap, Users, Award, Code, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import teamImage from "@/assets/team-work.jpg";
+import teamImage from "@/assets/md_imagem_2.png";
 const features = [{
   icon: Target,
   title: "Foco em Resultados",
