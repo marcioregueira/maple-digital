@@ -87,8 +87,9 @@ const About = () => {
               fortalecer sua presença online com qualidade e profissionalismo.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Utilizamos as tecnologias mais modernas do mercado, como React, Node.js, TypeScript e outras 
-              ferramentas de ponta para garantir que sua presença digital seja profissional, segura e escalável.
+              Trabalho com ferramentas atuais e práticas do mercado para garantir que cada projeto seja rápido, 
+              seguro, responsivo e alinhado às necessidades do cliente. Meu foco é entregar uma presença digital 
+              bem estruturada, funcional e pensada para gerar resultados reais no dia a dia do seu negócio.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Nossa equipe experiente trabalha em parceria com você do início ao fim, garantindo que cada 
