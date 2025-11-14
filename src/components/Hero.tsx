@@ -32,9 +32,29 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.1s" }}>
             Sites, Landing Pages e Aplicativos personalizados que impulsionam seu negócio para o próximo nível
           </p>
+
+          {/* Key Features */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+            <div className="flex items-center gap-2 text-gray-300">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-sm md:text-base">Design Moderno</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-sm md:text-base">100% Responsivo</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-sm md:text-base">SEO Otimizado</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-sm md:text-base">Entrega Rápida</span>
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
