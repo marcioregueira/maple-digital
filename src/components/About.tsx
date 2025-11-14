@@ -81,13 +81,15 @@ const About = () => {
               Transformando ideias em soluções digitais de sucesso
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              A <span className="text-primary font-semibold">​Como profissional freelance, atuo lado a lado com você em todas as etapas, desde o planejamento até a finalização. Cada detalhe é acompanhado de perto, com transparência, comunicação direta e dedicação total para oferecer uma experiência simples, clara e capaz de superar suas expectativas.</span> nasceu com o propósito de 
-              democratizar o acesso às soluções digitais de qualidade. Criamos sites, landing pages e aplicativos 
-              personalizados para pequenos negócios, pousadas e empreendedores que desejam crescer no digital.
+              A <span className="text-primary font-semibold">Maple Digital</span> foi criada com o objetivo de 
+              oferecer soluções digitais acessíveis, modernas e personalizadas. Desenvolvo sites, landing pages e 
+              projetos sob medida para pequenos negócios, profissionais autônomos e empreendedores que desejam 
+              fortalecer sua presença online com qualidade e profissionalismo.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Utilizamos as tecnologias mais modernas do mercado, como React, Node.js, TypeScript e outras 
-              ferramentas de ponta para garantir que sua presença digital seja profissional, segura e escalável.
+              Trabalho com ferramentas atuais e práticas do mercado para garantir que cada projeto seja rápido, 
+              seguro, responsivo e alinhado às necessidades do cliente. Meu foco é entregar uma presença digital 
+              bem estruturada, funcional e pensada para gerar resultados reais no dia a dia do seu negócio.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Nossa equipe experiente trabalha em parceria com você do início ao fim, garantindo que cada 
