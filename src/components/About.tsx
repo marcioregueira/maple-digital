@@ -113,7 +113,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-foreground">Suporte 24/7</span>
+                <span className="text-sm font-medium text-foreground">Processo Transparente e Entrega Profissional</span>
               </div>
             </div>
           </div>
