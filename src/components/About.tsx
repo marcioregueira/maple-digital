@@ -92,8 +92,9 @@ const About = () => {
               bem estruturada, funcional e pensada para gerar resultados reais no dia a dia do seu negócio.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Nossa equipe experiente trabalha em parceria com você do início ao fim, garantindo que cada 
-              detalhe seja cuidadosamente planejado e executado para superar suas expectativas.
+              Como profissional freelance, atuo lado a lado com você em todas as etapas, desde o planejamento 
+              até a finalização. Cada detalhe é acompanhado de perto, com transparência, comunicação direta e 
+              dedicação total para oferecer uma experiência simples, clara e capaz de superar suas expectativas.
             </p>
 
             {/* Key Points */}
