@@ -59,7 +59,7 @@ const About = () => {
           {/* Image Column */}
           <div className="relative animate-scale-in order-2 lg:order-1">
             <div className="relative rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
-              <img src={teamImage} alt="Equipe Soluc Digital" className="w-full h-auto object-cover" />
+              <img alt="Equipe Soluc Digital" className="w-full h-auto object-cover" src="/lovable-uploads/7e940218-7cf7-4c0b-900a-cd1e99df804f.jpg" />
               {/* Overlay Stats */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
                 <div className="grid grid-cols-2 gap-4 p-8 w-full">
