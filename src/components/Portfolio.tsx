@@ -6,33 +6,25 @@ import appImg from "@/assets/project-app.jpg";
 import landingImg from "@/assets/project-landing.jpg";
 import realestateImg from "@/assets/project-realestate.jpg";
 const projects = [{
-  title: "E-commerce Moda",
-  description: "Plataforma completa de vendas online com sistema de pagamento integrado e gestão de estoque",
-  tags: ["React", "Node.js", "Stripe"],
+  title: "E-commerce Personalizado",
+  description: "Lojas virtuais completas com sistema de pagamento, gestão de estoque e painel administrativo",
   category: "Loja Virtual",
-  image: ecommerceImg,
-  stats: "+150% vendas"
+  image: ecommerceImg
 }, {
-  title: "App Delivery",
-  description: "Aplicativo de delivery com rastreamento em tempo real e notificações push",
-  tags: ["React Native", "Firebase"],
-  category: "Aplicativo Mobile",
-  image: appImg,
-  stats: "10k+ downloads"
+  title: "Aplicativos Mobile",
+  description: "Apps nativos e híbridos para iOS e Android com design moderno e funcionalidades avançadas",
+  category: "Aplicativo",
+  image: appImg
 }, {
-  title: "Landing Page SaaS",
-  description: "Página de conversão otimizada para startup de tecnologia com foco em leads",
-  tags: ["Next.js", "Tailwind"],
+  title: "Landing Pages",
+  description: "Páginas de alta conversão para captura de leads e lançamentos de produtos ou serviços",
   category: "Marketing",
-  image: landingImg,
-  stats: "45% conversão"
+  image: landingImg
 }, {
-  title: "Portal Imobiliário",
-  description: "Sistema completo de gestão e divulgação de imóveis com busca avançada",
-  tags: ["React", "PostgreSQL"],
+  title: "Sites Institucionais",
+  description: "Websites profissionais para empresas com design exclusivo e otimização para buscadores",
   category: "Website",
-  image: realestateImg,
-  stats: "2k+ imóveis"
+  image: realestateImg
 }];
 const Portfolio = () => {
   return <section id="portfolio" className="py-24 md:py-32 relative overflow-hidden">
@@ -42,13 +34,13 @@ const Portfolio = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-            <span className="text-sm font-semibold text-primary">Portfolio</span>
+            <span className="text-sm font-semibold text-primary">Soluções</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Projetos que <span className="text-primary">Transformam</span>
+            O que podemos <span className="text-primary">criar para você</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça alguns dos projetos desenvolvidos com excelência e dedicação
+            Desenvolvemos soluções digitais personalizadas para o seu negócio
           </p>
         </div>
 
@@ -65,13 +57,6 @@ const Portfolio = () => {
                 <div className="absolute top-4 right-4">
                   <Badge className="bg-primary/90 text-background backdrop-blur-sm">
                     {project.category}
-                  </Badge>
-                </div>
-
-                {/* Stat Badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge variant="outline" className="bg-background/80 backdrop-blur-sm border-primary/30">
-                    {project.stats}
                   </Badge>
                 </div>
 
