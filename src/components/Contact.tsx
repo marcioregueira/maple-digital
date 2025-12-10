@@ -48,7 +48,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Localização",
-      value: "São Paulo, SP",
+      value: "Recife, PE",
       link: null,
       description: "Brasil",
     },
