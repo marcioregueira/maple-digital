@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
-import ecommerceImg from "@/assets/project-ecommerce.jpg";
-import appImg from "@/assets/project-app.jpg";
-import landingImg from "@/assets/project-landing.jpg";
-import realestateImg from "@/assets/project-realestate.jpg";
+import ecommerceImg from "@/assets/portfolio-ecommerce.png";
+import appImg from "@/assets/portfolio-app.png";
+import landingImg from "@/assets/portfolio-landing.png";
+import realestateImg from "@/assets/portfolio-institutional.png";
 const projects = [{
   title: "E-commerce Personalizado",
   description: "Lojas virtuais completas com sistema de pagamento, gestão de estoque e painel administrativo",
