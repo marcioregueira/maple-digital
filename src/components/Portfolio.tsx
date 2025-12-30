@@ -173,23 +173,23 @@ const Portfolio = () => {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+          <div className="grid sm:grid-cols-2 gap-6 mt-6">
             {selectedCategory?.projects.map((project, index) => (
               <Card
                 key={index}
                 className="overflow-hidden border border-border bg-background/50 hover:shadow-lg transition-all duration-300"
               >
-                <div className="relative h-40 overflow-hidden">
+                <div className="relative h-56 sm:h-64 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-foreground mb-2">{project.name}</h4>
-                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
+                <CardContent className="p-5">
+                  <h4 className="font-semibold text-lg text-foreground mb-2">{project.name}</h4>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
                   {project.url && (
                     <Button
                       variant="outline"
