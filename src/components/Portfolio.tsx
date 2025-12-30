@@ -15,6 +15,7 @@ import appImg from "@/assets/portfolio-app.png";
 import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
+import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 
 interface Project {
   name: string;
@@ -81,10 +82,10 @@ const portfolioData: PortfolioCategory[] = [
     image: realestateImg,
     projects: [
       {
-        name: "Em breve",
-        description: "Novos projetos serão adicionados em breve",
-        url: "",
-        image: realestateImg,
+        name: "Flat Rainha da Serra",
+        description: "Plataforma institucional e de reservas para o Flat Rainha da Serra, oferecendo uma experiência completa para hóspedes.",
+        url: "https://flatrainhadaserra.com.br",
+        image: flatRainhaImg,
       },
     ],
   },
