@@ -14,6 +14,7 @@ import ecommerceImg from "@/assets/portfolio-ecommerce.png";
 import appImg from "@/assets/portfolio-app.png";
 import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
+import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 
 interface Project {
   name: string;
@@ -66,10 +67,10 @@ const portfolioData: PortfolioCategory[] = [
     image: landingImg,
     projects: [
       {
-        name: "Em breve",
-        description: "Novos projetos serão adicionados em breve",
-        url: "",
-        image: landingImg,
+        name: "Barbearia Henrique Dias",
+        description: "Sistema web completo para uma barbearia, combinando uma landing page elegante com um sistema de gestão administrativa robusto.",
+        url: "https://henriquediasbarber.lovable.app",
+        image: barbeariaHenriqueImg,
       },
     ],
   },
