@@ -76,7 +76,7 @@ const portfolioData: PortfolioCategory[] = [
       },
       {
         name: "Sorvete Muito Bom",
-        description: "Site institucional de sorveteria desenvolvido em React + TypeScript com Vite e Tailwind CSS.",
+        description: "Landing page moderna para sorveteria artesanal, com design vibrante, animações suaves e integração com redes sociais.",
         url: "https://site-sorvete-muito-bom.lovable.app",
         image: sorveteMuitoBomImg,
       },
