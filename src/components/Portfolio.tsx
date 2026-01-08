@@ -16,6 +16,7 @@ import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
+import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 
 interface Project {
   name: string;
@@ -72,6 +73,12 @@ const portfolioData: PortfolioCategory[] = [
         description: "Sistema web completo para uma barbearia, combinando uma landing page elegante com um sistema de gestão administrativa robusto.",
         url: "https://henriquediasbarber.lovable.app",
         image: barbeariaHenriqueImg,
+      },
+      {
+        name: "Sorvete Muito Bom",
+        description: "Site institucional de sorveteria desenvolvido em React + TypeScript com Vite e Tailwind CSS.",
+        url: "https://site-sorvete-muito-bom.lovable.app",
+        image: sorveteMuitoBomImg,
       },
     ],
   },
