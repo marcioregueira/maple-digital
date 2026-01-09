@@ -17,6 +17,7 @@ import realestateImg from "@/assets/portfolio-institutional.png";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
+import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
 
 interface Project {
   name: string;
@@ -79,6 +80,12 @@ const portfolioData: PortfolioCategory[] = [
         description: "Landing page moderna para sorveteria artesanal, com design vibrante, animações suaves e integração com redes sociais.",
         url: "https://site-sorvete-muito-bom.lovable.app",
         image: sorveteMuitoBomImg,
+      },
+      {
+        name: "Lavajato Brilho Máximo",
+        description: "Landing page premium para lavajato automotivo, com design moderno em azul e amarelo, animações elegantes e integração com WhatsApp.",
+        url: "https://lavajato-brilho-maximo.vercel.app/",
+        image: lavajatoImg,
       },
     ],
   },
