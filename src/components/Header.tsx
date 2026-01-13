@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3 group">
-            <img alt="Maple Digital - Soluções Digitais" className="h-14 w-auto transition-opacity group-hover:opacity-80" src="/lovable-uploads/e49d8d50-769f-440f-bd25-4ea29beb3d08.png" />
+            <img alt="Maple Digital - Soluções Digitais" className="h-18 w-auto transition-opacity group-hover:opacity-80" src="/lovable-uploads/e49d8d50-769f-440f-bd25-4ea29beb3d08.png" />
             <span className="text-2xl font-bold text-primary group-hover:text-primary/80 transition-colors">
               Maple Digital
             </span>
