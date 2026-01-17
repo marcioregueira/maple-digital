@@ -1,4 +1,4 @@
-import { Globe, Smartphone, Rocket, Headphones, Check } from "lucide-react";
+import { Globe, Rocket, Headphones, Check } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -6,7 +6,7 @@ const services = [
   {
     icon: Globe,
     title: "Criação de Sites",
-    description: "Sites institucionais, e-commerce e portais personalizados com design moderno e responsivo.",
+    description: "Sites institucionais e portais personalizados com design moderno e responsivo.",
     features: ["SEO Otimizado", "Design Responsivo", "Alta Performance"],
   },
   {
@@ -14,12 +14,6 @@ const services = [
     title: "Landing Pages",
     description: "Páginas de conversão estratégicas focadas em capturar leads e maximizar resultados.",
     features: ["Alta Conversão", "A/B Testing", "Analytics Integrado"],
-  },
-  {
-    icon: Smartphone,
-    title: "Aplicativos Mobile",
-    description: "Apps nativos e híbridos para iOS e Android com experiência de usuário excepcional.",
-    features: ["iOS & Android", "Push Notifications", "Offline First"],
   },
   {
     icon: Headphones,
@@ -48,7 +42,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
             <Card
               key={index}
