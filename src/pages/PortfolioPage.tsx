@@ -148,12 +148,7 @@ const differentials = [
   },
 ];
 
-const stats = [
-  { number: "15+", label: "Projetos Entregues" },
-  { number: "100%", label: "Satisfação" },
-  { number: "2+", label: "Anos de Experiência" },
-  { number: "24h", label: "Tempo de Resposta" },
-];
+// Stats removed - using floating image instead
 
 const PortfolioPage = () => {
   const scrollToContact = () => {
@@ -167,38 +162,50 @@ const PortfolioPage = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
 
         <div className="container mx-auto px-4 relative z-10">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in"
           >
             <ArrowLeft className="w-4 h-4" />
             Voltar para Home
           </Link>
 
-          <div className="max-w-4xl">
-            <Badge className="bg-primary/10 text-primary border-primary/30 mb-6">
-              <Sparkles className="w-3 h-3 mr-1" />
-              Portfólio Completo
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
-              Transformamos <span className="text-primary">ideias</span> em realidade digital
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl">
-              Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Text Content */}
+            <div className="order-2 lg:order-1">
+              <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
+                <Sparkles className="w-3 h-3 mr-1" />
+                Portfólio Completo
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{ animationDelay: "100ms", animationFillMode: "both" }}>
+                Transformamos <span className="text-primary">ideias</span> em realidade digital
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "both" }}>
+                Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
+              </p>
+            </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center md:text-left">
-                  <div className="text-3xl md:text-4xl font-bold text-primary">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+            {/* Floating Image */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: "300ms", animationFillMode: "both" }}>
+              <div className="relative">
+                {/* Background glow effect */}
+                <div className="absolute -inset-8 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+                
+                {/* Main image container */}
+                <div className="relative animate-float">
+                  <img
+                    src={mdImagem}
+                    alt="Maple Digital - Desenvolvimento Web"
+                    className="relative w-64 md:w-80 lg:w-96 h-auto rounded-2xl shadow-2xl shadow-primary/30 drop-shadow-2xl"
+                  />
+                  {/* Decorative border */}
+                  <div className="absolute -inset-1 bg-gradient-to-tr from-primary/50 to-accent/50 rounded-2xl -z-10 blur-sm" />
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
