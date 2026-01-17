@@ -10,8 +10,6 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { ExternalLink, Eye } from "lucide-react";
-import ecommerceImg from "@/assets/portfolio-ecommerce.png";
-import appImg from "@/assets/portfolio-app.png";
 import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
@@ -35,34 +33,6 @@ interface PortfolioCategory {
 }
 
 const portfolioData: PortfolioCategory[] = [
-  {
-    title: "E-commerce Personalizado",
-    description: "Lojas virtuais completas com sistema de pagamento, gestão de estoque e painel administrativo",
-    category: "Loja Virtual",
-    image: ecommerceImg,
-    projects: [
-      {
-        name: "Em breve",
-        description: "Novos projetos serão adicionados em breve",
-        url: "",
-        image: ecommerceImg,
-      },
-    ],
-  },
-  {
-    title: "Aplicativos Mobile",
-    description: "Apps nativos e híbridos para iOS e Android com design moderno e funcionalidades avançadas",
-    category: "Aplicativo",
-    image: appImg,
-    projects: [
-      {
-        name: "Em breve",
-        description: "Novos projetos serão adicionados em breve",
-        url: "",
-        image: appImg,
-      },
-    ],
-  },
   {
     title: "Landing Pages",
     description: "Páginas de alta conversão para captura de leads e lançamentos de produtos ou serviços",
