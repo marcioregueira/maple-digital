@@ -174,7 +174,7 @@ const PortfolioPage = () => {
             Voltar para Home
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             {/* Text Content */}
             <div className="order-2 lg:order-1">
               <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
@@ -190,7 +190,7 @@ const PortfolioPage = () => {
             </div>
 
             {/* Floating Image */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: "300ms", animationFillMode: "both" }}>
+            <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{ animationDelay: "300ms", animationFillMode: "both" }}>
               <div className="relative">
                 {/* Background glow effect */}
                 <div className="absolute -inset-8 bg-primary/20 rounded-full blur-3xl animate-pulse" />
@@ -200,7 +200,7 @@ const PortfolioPage = () => {
                   <img
                     src={mapleLogoHero}
                     alt="Maple Digital - Desenvolvimento Web"
-                    className="relative w-64 md:w-80 lg:w-96 h-auto"
+                    className="relative w-72 md:w-96 lg:w-[450px] h-auto"
                   />
                 </div>
               </div>
