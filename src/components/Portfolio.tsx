@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye, ArrowRight } from "lucide-react";
 import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
@@ -158,7 +159,16 @@ const Portfolio = () => {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="grid sm:grid-cols-2 gap-6 mt-6">
+          <div className="flex justify-end mb-2">
+            <Button variant="ghost" asChild className="text-primary hover:text-primary/80">
+              <Link to="/portfolio" className="flex items-center gap-2">
+                Ver portfólio completo
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
             {selectedCategory?.projects.map((project, index) => (
               <Card
                 key={index}
