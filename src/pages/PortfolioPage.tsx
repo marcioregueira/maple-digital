@@ -200,10 +200,8 @@ const PortfolioPage = () => {
                   <img
                     src={mapleLogoHero}
                     alt="Maple Digital - Desenvolvimento Web"
-                    className="relative w-64 md:w-80 lg:w-96 h-auto rounded-2xl shadow-2xl shadow-primary/30 drop-shadow-2xl"
+                    className="relative w-64 md:w-80 lg:w-96 h-auto"
                   />
-                  {/* Decorative border */}
-                  <div className="absolute -inset-1 bg-gradient-to-tr from-primary/50 to-accent/50 rounded-2xl -z-10 blur-sm" />
                 </div>
               </div>
             </div>
@@ -216,11 +214,10 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50" />
               <img
                 src={mapleLogoHero}
                 alt="Maple Digital"
-                className="relative rounded-2xl w-full max-w-md mx-auto lg:mx-0 shadow-2xl"
+                className="relative w-full max-w-md mx-auto lg:mx-0"
               />
             </div>
 
