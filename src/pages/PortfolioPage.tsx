@@ -25,7 +25,7 @@ import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
-import mdImagem from "@/assets/md_imagem_2.png";
+import mapleLogoHero from "@/assets/maple-logo-hero.png";
 
 interface Project {
   name: string;
@@ -198,7 +198,7 @@ const PortfolioPage = () => {
                 {/* Main image container */}
                 <div className="relative animate-float">
                   <img
-                    src={mdImagem}
+                    src={mapleLogoHero}
                     alt="Maple Digital - Desenvolvimento Web"
                     className="relative w-64 md:w-80 lg:w-96 h-auto rounded-2xl shadow-2xl shadow-primary/30 drop-shadow-2xl"
                   />
@@ -218,7 +218,7 @@ const PortfolioPage = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50" />
               <img
-                src={mdImagem}
+                src={mapleLogoHero}
                 alt="Maple Digital"
                 className="relative rounded-2xl w-full max-w-md mx-auto lg:mx-0 shadow-2xl"
               />
