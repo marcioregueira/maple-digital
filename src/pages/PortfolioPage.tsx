@@ -26,6 +26,7 @@ import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
 import mapleLogoHero from "@/assets/maple-logo-hero.png";
+import fotoLinkedin from "@/assets/foto-linkedin.png";
 
 interface Project {
   name: string;
@@ -215,9 +216,9 @@ const PortfolioPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative">
               <img
-                src={mapleLogoHero}
-                alt="Maple Digital"
-                className="relative w-full max-w-md mx-auto lg:mx-0"
+                src={fotoLinkedin}
+                alt="Fundador Maple Digital"
+                className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl"
               />
             </div>
 
