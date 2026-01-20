@@ -200,7 +200,7 @@ const PortfolioPage = () => {
                   <img
                     src={mapleLogoHero}
                     alt="Maple Digital - Desenvolvimento Web"
-                    className="relative w-72 md:w-96 lg:w-[450px] h-auto"
+                    className="relative w-80 md:w-[420px] lg:w-[550px] h-auto"
                   />
                 </div>
               </div>
