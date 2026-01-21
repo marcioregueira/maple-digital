@@ -10,7 +10,7 @@ import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
 import mapleLogoHero from "@/assets/maple-logo-hero.png";
-import mdImagem6 from "@/assets/md_imagem_6.png";
+import fotoLinkedin from "@/assets/foto-linkedin.png";
 interface Project {
   name: string;
   description: string;
@@ -176,7 +176,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative">
-              <img src={mdImagem6} alt="Maple Digital - Desenvolvimento Web" className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl" />
+              <img alt="Fundador Maple Digital" className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl" src="/lovable-uploads/fb47dce4-c14c-448b-b19a-5474fef998a5.png" />
             </div>
 
             <div>
