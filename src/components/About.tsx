@@ -1,30 +1,40 @@
 import { Target, Zap, Users, Award, Code, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import teamImage from "@/assets/md_imagem_2.png";
+
+// Storage bucket base URL for card background images
+const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
+
 const features = [{
   icon: Target,
   title: "Foco em Resultados",
-  description: "Cada projeto é desenvolvido pensando no sucesso e crescimento do seu negócio"
+  description: "Cada projeto é desenvolvido pensando no sucesso e crescimento do seu negócio",
+  backgroundImage: `${STORAGE_URL}/foco-resultados.png`
 }, {
   icon: Zap,
   title: "Entregas Rápidas",
-  description: "Agilidade sem comprometer a qualidade, cumprindo prazos estabelecidos"
+  description: "Agilidade sem comprometer a qualidade, cumprindo prazos estabelecidos",
+  backgroundImage: `${STORAGE_URL}/entregas-rapidas.png`
 }, {
   icon: Users,
   title: "Suporte Dedicado",
-  description: "Acompanhamento personalizado em todas as etapas do projeto"
+  description: "Acompanhamento personalizado em todas as etapas do projeto",
+  backgroundImage: `${STORAGE_URL}/suporte-dedicado.png`
 }, {
   icon: Award,
   title: "Qualidade Premium",
-  description: "Tecnologias modernas e código limpo seguindo as melhores práticas"
+  description: "Tecnologias modernas e código limpo seguindo as melhores práticas",
+  backgroundImage: `${STORAGE_URL}/qualidade-premium.png`
 }, {
   icon: Code,
   title: "Código Escalável",
-  description: "Desenvolvemos pensando no crescimento futuro da sua aplicação"
+  description: "Desenvolvemos pensando no crescimento futuro da sua aplicação",
+  backgroundImage: `${STORAGE_URL}/codigo-escalavel.png`
 }, {
   icon: Shield,
   title: "Segurança First",
-  description: "Proteção de dados e segurança integradas desde o início"
+  description: "Proteção de dados e segurança integradas desde o início",
+  backgroundImage: `${STORAGE_URL}/seguranca-first.png`
 }];
 const stats = [{
   number: "5+",
@@ -121,21 +131,36 @@ const About = () => {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => <Card key={index} className="border border-border bg-card/50 backdrop-blur hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 animate-scale-in" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
-              <CardHeader>
+          {features.map((feature, index) => (
+            <Card 
+              key={index} 
+              className="relative overflow-hidden border border-border bg-card/50 backdrop-blur hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 animate-scale-in" 
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Background Image */}
+              {feature.backgroundImage && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-15 transition-opacity duration-300 group-hover:opacity-25"
+                  style={{ backgroundImage: `url(${feature.backgroundImage})` }}
+                />
+              )}
+              {/* Gradient Overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-br from-card/95 via-card/85 to-card/75" />
+              
+              {/* Content */}
+              <CardHeader className="relative z-10">
                 <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-primary" />
                 </div>
                 <CardTitle className="text-xl text-foreground">{feature.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="relative z-10">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
       </div>
     </section>;
