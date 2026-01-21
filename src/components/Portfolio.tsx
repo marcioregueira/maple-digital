@@ -114,12 +114,6 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                {/* Floating Badge */}
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-primary/90 text-background backdrop-blur-sm">
-                    {category.category}
-                  </Badge>
-                </div>
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500 flex items-center justify-center">
