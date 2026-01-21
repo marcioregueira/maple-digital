@@ -163,7 +163,7 @@ const PortfolioPage = () => {
                 
                 {/* Main image container */}
                 <div className="relative animate-float">
-                  <img alt="Maple Digital - Desenvolvimento Web" className="relative w-80 md:w-[420px] lg:w-[550px] h-auto" src="/lovable-uploads/a0d8efcb-a318-4b21-ba35-1724db3ade24.png" />
+                  <img alt="Maple Digital - Desenvolvimento Web" className="relative w-80 md:w-[420px] lg:w-[550px] h-auto" src="/lovable-uploads/0710c2ba-0653-4cb4-a794-ce1b2598e785.png" />
                 </div>
               </div>
             </div>
