@@ -1,1 +1,4 @@
 project_id = "iqvqamowmibjifpmlixi"
+
+[functions.generate-card-images]
+verify_jwt = false
