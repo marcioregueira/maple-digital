@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Maple Digital" className="h-12 w-auto" />
+              <img alt="Maple Digital" className="h-12 w-auto" src="/lovable-uploads/e4f54b41-50d7-4d19-9a69-5c25575e2f60.png" />
               <h3 className="text-3xl font-bold text-primary">
                 Maple Digital
               </h3>
