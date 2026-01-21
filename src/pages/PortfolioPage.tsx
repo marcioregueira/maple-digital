@@ -4,30 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  ArrowLeft, 
-  ExternalLink, 
-  Clock, 
-  CheckCircle2, 
-  MessageSquare, 
-  Palette, 
-  Code2, 
-  Rocket,
-  Users,
-  Award,
-  Zap,
-  Shield,
-  Heart,
-  Sparkles
-} from "lucide-react";
-
+import { ArrowLeft, ExternalLink, Clock, CheckCircle2, MessageSquare, Palette, Code2, Rocket, Users, Award, Zap, Shield, Heart, Sparkles } from "lucide-react";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
 import mapleLogoHero from "@/assets/maple-logo-hero.png";
 import fotoLinkedin from "@/assets/foto-linkedin.png";
-
 interface Project {
   name: string;
   description: string;
@@ -37,117 +20,93 @@ interface Project {
   duration: string;
   technologies: string[];
 }
-
-const projects: Project[] = [
-  {
-    name: "Barbearia Henrique Dias",
-    description: "Sistema web completo para uma barbearia, combinando uma landing page elegante com um sistema de gestão administrativa robusto. Design moderno com foco na experiência do usuário.",
-    url: "https://henriquediasbarber.lovable.app",
-    image: barbeariaHenriqueImg,
-    category: "Landing Page",
-    duration: "2 semanas",
-    technologies: ["React", "Tailwind CSS", "TypeScript"],
-  },
-  {
-    name: "Sorvete Muito Bom",
-    description: "Landing page moderna para sorveteria artesanal, com design vibrante, animações suaves e integração com redes sociais. Foco em destacar os produtos e atrair clientes.",
-    url: "https://site-sorvete-muito-bom.lovable.app",
-    image: sorveteMuitoBomImg,
-    category: "Landing Page",
-    duration: "1 semana",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-  },
-  {
-    name: "Lavajato Brilho Máximo",
-    description: "Landing page premium para lavajato automotivo, com design moderno em azul e amarelo, animações elegantes e integração com WhatsApp para agendamentos.",
-    url: "https://lavajato-brilho-maximo.vercel.app/",
-    image: lavajatoImg,
-    category: "Landing Page",
-    duration: "1 semana",
-    technologies: ["React", "Tailwind CSS", "TypeScript"],
-  },
-  {
-    name: "Flat Rainha da Serra",
-    description: "Plataforma institucional e de reservas para o Flat Rainha da Serra, oferecendo uma experiência completa para hóspedes com sistema de reservas integrado e galeria de fotos.",
-    url: "https://flatrainhadaserra.com.br",
-    image: flatRainhaImg,
-    category: "Site Institucional",
-    duration: "3 semanas",
-    technologies: ["React", "Tailwind CSS", "Supabase"],
-  },
-];
-
-const processSteps = [
-  {
-    icon: MessageSquare,
-    title: "Briefing",
-    description: "Entendemos seu negócio, objetivos e público-alvo para criar uma solução sob medida.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Planejamento",
-    description: "Definimos escopo, estrutura e cronograma do projeto de forma transparente.",
-  },
-  {
-    icon: Palette,
-    title: "Design",
-    description: "Criamos layouts modernos e funcionais, sempre com sua aprovação antes de codificar.",
-  },
-  {
-    icon: Code2,
-    title: "Desenvolvimento",
-    description: "Codificamos com tecnologias modernas, garantindo qualidade e performance.",
-  },
-  {
-    icon: Rocket,
-    title: "Entrega",
-    description: "Publicamos seu projeto e oferecemos treinamento para você gerenciar o conteúdo.",
-  },
-];
-
-const services = [
-  {
-    title: "Sites Institucionais",
-    description: "Websites profissionais que representam sua marca na internet, com design exclusivo e otimizados para buscadores.",
-    features: ["Design responsivo", "SEO otimizado", "Páginas ilimitadas", "Formulário de contato", "Integração com redes sociais"],
-    timeline: "2-4 semanas",
-  },
-  {
-    title: "Landing Pages",
-    description: "Páginas de alta conversão focadas em capturar leads e converter visitantes em clientes.",
-    features: ["Design focado em conversão", "Carregamento rápido", "CTA estratégicos", "Integração WhatsApp", "Analytics integrado"],
-    timeline: "1-2 semanas",
-  },
-  {
-    title: "Manutenção e Suporte",
-    description: "Mantemos seu site sempre atualizado, seguro e funcionando perfeitamente.",
-    features: ["Atualizações de segurança", "Backup regular", "Suporte prioritário", "Alterações de conteúdo", "Monitoramento 24/7"],
-    timeline: "Contrato mensal",
-  },
-];
-
-const differentials = [
-  {
-    icon: Users,
-    title: "Atendimento Personalizado",
-    description: "Cada projeto é único. Trabalhamos lado a lado com você em todas as etapas.",
-  },
-  {
-    icon: Zap,
-    title: "Entrega Rápida",
-    description: "Cumprimos prazos rigorosamente, sem sacrificar a qualidade do trabalho.",
-  },
-  {
-    icon: Shield,
-    title: "Código de Qualidade",
-    description: "Utilizamos as melhores práticas e tecnologias modernas em todos os projetos.",
-  },
-  {
-    icon: Heart,
-    title: "Suporte Contínuo",
-    description: "Não abandonamos você após a entrega. Estamos aqui para ajudar sempre.",
-  },
-];
+const projects: Project[] = [{
+  name: "Barbearia Henrique Dias",
+  description: "Sistema web completo para uma barbearia, combinando uma landing page elegante com um sistema de gestão administrativa robusto. Design moderno com foco na experiência do usuário.",
+  url: "https://henriquediasbarber.lovable.app",
+  image: barbeariaHenriqueImg,
+  category: "Landing Page",
+  duration: "2 semanas",
+  technologies: ["React", "Tailwind CSS", "TypeScript"]
+}, {
+  name: "Sorvete Muito Bom",
+  description: "Landing page moderna para sorveteria artesanal, com design vibrante, animações suaves e integração com redes sociais. Foco em destacar os produtos e atrair clientes.",
+  url: "https://site-sorvete-muito-bom.lovable.app",
+  image: sorveteMuitoBomImg,
+  category: "Landing Page",
+  duration: "1 semana",
+  technologies: ["React", "Tailwind CSS", "Framer Motion"]
+}, {
+  name: "Lavajato Brilho Máximo",
+  description: "Landing page premium para lavajato automotivo, com design moderno em azul e amarelo, animações elegantes e integração com WhatsApp para agendamentos.",
+  url: "https://lavajato-brilho-maximo.vercel.app/",
+  image: lavajatoImg,
+  category: "Landing Page",
+  duration: "1 semana",
+  technologies: ["React", "Tailwind CSS", "TypeScript"]
+}, {
+  name: "Flat Rainha da Serra",
+  description: "Plataforma institucional e de reservas para o Flat Rainha da Serra, oferecendo uma experiência completa para hóspedes com sistema de reservas integrado e galeria de fotos.",
+  url: "https://flatrainhadaserra.com.br",
+  image: flatRainhaImg,
+  category: "Site Institucional",
+  duration: "3 semanas",
+  technologies: ["React", "Tailwind CSS", "Supabase"]
+}];
+const processSteps = [{
+  icon: MessageSquare,
+  title: "Briefing",
+  description: "Entendemos seu negócio, objetivos e público-alvo para criar uma solução sob medida."
+}, {
+  icon: CheckCircle2,
+  title: "Planejamento",
+  description: "Definimos escopo, estrutura e cronograma do projeto de forma transparente."
+}, {
+  icon: Palette,
+  title: "Design",
+  description: "Criamos layouts modernos e funcionais, sempre com sua aprovação antes de codificar."
+}, {
+  icon: Code2,
+  title: "Desenvolvimento",
+  description: "Codificamos com tecnologias modernas, garantindo qualidade e performance."
+}, {
+  icon: Rocket,
+  title: "Entrega",
+  description: "Publicamos seu projeto e oferecemos treinamento para você gerenciar o conteúdo."
+}];
+const services = [{
+  title: "Sites Institucionais",
+  description: "Websites profissionais que representam sua marca na internet, com design exclusivo e otimizados para buscadores.",
+  features: ["Design responsivo", "SEO otimizado", "Páginas ilimitadas", "Formulário de contato", "Integração com redes sociais"],
+  timeline: "2-4 semanas"
+}, {
+  title: "Landing Pages",
+  description: "Páginas de alta conversão focadas em capturar leads e converter visitantes em clientes.",
+  features: ["Design focado em conversão", "Carregamento rápido", "CTA estratégicos", "Integração WhatsApp", "Analytics integrado"],
+  timeline: "1-2 semanas"
+}, {
+  title: "Manutenção e Suporte",
+  description: "Mantemos seu site sempre atualizado, seguro e funcionando perfeitamente.",
+  features: ["Atualizações de segurança", "Backup regular", "Suporte prioritário", "Alterações de conteúdo", "Monitoramento 24/7"],
+  timeline: "Contrato mensal"
+}];
+const differentials = [{
+  icon: Users,
+  title: "Atendimento Personalizado",
+  description: "Cada projeto é único. Trabalhamos lado a lado com você em todas as etapas."
+}, {
+  icon: Zap,
+  title: "Entrega Rápida",
+  description: "Cumprimos prazos rigorosamente, sem sacrificar a qualidade do trabalho."
+}, {
+  icon: Shield,
+  title: "Código de Qualidade",
+  description: "Utilizamos as melhores práticas e tecnologias modernas em todos os projetos."
+}, {
+  icon: Heart,
+  title: "Suporte Contínuo",
+  description: "Não abandonamos você após a entrega. Estamos aqui para ajudar sempre."
+}];
 
 // Stats removed - using floating image instead
 
@@ -155,22 +114,19 @@ const PortfolioPage = () => {
   const scrollToContact = () => {
     window.location.href = "/#contato";
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{
+        animationDelay: "1s"
+      }} />
 
         <div className="container mx-auto px-4 relative z-10">
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in"
-          >
+          <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
             <ArrowLeft className="w-4 h-4" />
             Voltar para Home
           </Link>
@@ -182,27 +138,32 @@ const PortfolioPage = () => {
                 <Sparkles className="w-3 h-3 mr-1" />
                 Portfólio Completo
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{ animationDelay: "100ms", animationFillMode: "both" }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
+              animationDelay: "100ms",
+              animationFillMode: "both"
+            }}>
                 Transformamos <span className="text-primary">ideias</span> em realidade digital
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl animate-fade-in" style={{ animationDelay: "200ms", animationFillMode: "both" }}>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl animate-fade-in" style={{
+              animationDelay: "200ms",
+              animationFillMode: "both"
+            }}>
                 Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
               </p>
             </div>
 
             {/* Floating Image */}
-            <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{ animationDelay: "300ms", animationFillMode: "both" }}>
+            <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{
+            animationDelay: "300ms",
+            animationFillMode: "both"
+          }}>
               <div className="relative">
                 {/* Background glow effect */}
                 <div className="absolute -inset-8 bg-primary/20 rounded-full blur-3xl animate-pulse" />
                 
                 {/* Main image container */}
                 <div className="relative animate-float">
-                  <img
-                    src={mapleLogoHero}
-                    alt="Maple Digital - Desenvolvimento Web"
-                    className="relative w-80 md:w-[420px] lg:w-[550px] h-auto"
-                  />
+                  <img src={mapleLogoHero} alt="Maple Digital - Desenvolvimento Web" className="relative w-80 md:w-[420px] lg:w-[550px] h-auto" />
                 </div>
               </div>
             </div>
@@ -215,11 +176,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative">
-              <img
-                src={fotoLinkedin}
-                alt="Fundador Maple Digital"
-                className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl"
-              />
+              <img src={fotoLinkedin} alt="Fundador Maple Digital" className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl" />
             </div>
 
             <div>
@@ -230,15 +187,9 @@ const PortfolioPage = () => {
                 Quem é a <span className="text-primary">Maple Digital</span>
               </h2>
               <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Sou um desenvolvedor freelancer baseado em Recife, PE, apaixonado por criar soluções digitais que realmente fazem diferença para pequenos negócios e empreendedores.
-                </p>
-                <p>
-                  A Maple Digital nasceu da vontade de democratizar o acesso à tecnologia de qualidade. Acredito que todo negócio, independente do tamanho, merece uma presença digital profissional e moderna.
-                </p>
-                <p>
-                  Meu diferencial é o atendimento personalizado e o cuidado em cada etapa do projeto. Não trabalho com templates genéricos - cada solução é criada sob medida para atender às necessidades específicas do seu negócio.
-                </p>
+                <p>Sou Márcio Regueira, fundador e desenvolvedor da Maple Digital. Ajudo pequenos negócios e empreendedores a conquistarem uma presença digital profissional, moderna e eficiente.</p>
+                <p>A Maple Digital surgiu da vontade de tornar a tecnologia acessível, sem complicação e sem soluções genéricas. Cada projeto é pensado de forma estratégica, respeitando a identidade e os objetivos do seu negócio.</p>
+                <p>Aqui, você tem atendimento personalizado e soluções feitas sob medida do planejamento à entrega final, tudo é desenvolvido com foco em resultado.</p>
               </div>
             </div>
           </div>
@@ -261,8 +212,7 @@ const PortfolioPage = () => {
           </div>
 
           <div className="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
+            {processSteps.map((step, index) => <div key={index} className="relative">
                 <Card className="bg-card/50 border-border hover:border-primary/50 transition-all duration-300 h-full">
                   <CardContent className="p-6 text-center">
                     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -273,11 +223,8 @@ const PortfolioPage = () => {
                     <p className="text-sm text-muted-foreground">{step.description}</p>
                   </CardContent>
                 </Card>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30" />
-                )}
-              </div>
-            ))}
+                {index < processSteps.length - 1 && <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-primary/30" />}
+              </div>)}
           </div>
         </div>
       </section>
@@ -298,8 +245,7 @@ const PortfolioPage = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <Card key={index} className="bg-card/50 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+            {services.map((service, index) => <Card key={index} className="bg-card/50 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
                   <p className="text-muted-foreground mb-6">{service.description}</p>
@@ -310,16 +256,13 @@ const PortfolioPage = () => {
                   </div>
 
                   <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    {service.features.map((feature, idx) => <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                         {feature}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -340,14 +283,9 @@ const PortfolioPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {projects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden bg-card/50 border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+            {projects.map((project, index) => <Card key={index} className="group overflow-hidden bg-card/50 border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
+                  <img src={project.image} alt={project.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute top-4 left-4 flex gap-2">
                     <Badge className="bg-primary text-background">{project.category}</Badge>
@@ -365,22 +303,16 @@ const PortfolioPage = () => {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, idx) => (
-                      <Badge key={idx} variant="outline" className="text-xs">
+                    {project.technologies.map((tech, idx) => <Badge key={idx} variant="outline" className="text-xs">
                         {tech}
-                      </Badge>
-                    ))}
+                      </Badge>)}
                   </div>
-                  <Button
-                    className="w-full bg-primary hover:bg-primary/90 text-background"
-                    onClick={() => window.open(project.url, "_blank")}
-                  >
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-background" onClick={() => window.open(project.url, "_blank")}>
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Visitar Site
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -401,8 +333,7 @@ const PortfolioPage = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {differentials.map((diff, index) => (
-              <Card key={index} className="bg-card/50 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 text-center">
+            {differentials.map((diff, index) => <Card key={index} className="bg-card/50 border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 text-center">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <diff.icon className="w-8 h-8 text-primary" />
@@ -410,8 +341,7 @@ const PortfolioPage = () => {
                   <h3 className="text-lg font-bold text-foreground mb-3">{diff.title}</h3>
                   <p className="text-sm text-muted-foreground">{diff.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -436,18 +366,10 @@ const PortfolioPage = () => {
               O primeiro passo é uma conversa sem compromisso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-background shadow-lg shadow-primary/30"
-                onClick={scrollToContact}
-              >
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-background shadow-lg shadow-primary/30" onClick={scrollToContact}>
                 Solicitar Orçamento Gratuito
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => window.open("https://wa.me/5581999999999", "_blank")}
-              >
+              <Button size="lg" variant="outline" onClick={() => window.open("https://wa.me/5581999999999", "_blank")}>
                 Falar pelo WhatsApp
               </Button>
             </div>
@@ -456,8 +378,6 @@ const PortfolioPage = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default PortfolioPage;
