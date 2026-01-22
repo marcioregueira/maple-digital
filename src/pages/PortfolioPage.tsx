@@ -181,10 +181,12 @@ const PortfolioPage = () => {
                 
                 {/* Card 1 - Barbearia - Row 1 Col 1 */}
                 <div 
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
                     transform: `rotateY(-3deg) rotateX(2deg) translateY(${scrollY * 0.02}px)`,
                     transformStyle: "preserve-3d",
+                    animationDelay: "400ms",
+                    animationFillMode: "forwards",
                   }}
                 >
                   <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
@@ -197,10 +199,12 @@ const PortfolioPage = () => {
 
                 {/* Card 2 - Sorvete - Row 1 Col 2 */}
                 <div 
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
                     transform: `rotateY(3deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
                     transformStyle: "preserve-3d",
+                    animationDelay: "550ms",
+                    animationFillMode: "forwards",
                   }}
                 >
                   <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
@@ -213,10 +217,12 @@ const PortfolioPage = () => {
 
                 {/* Card 3 - Lavajato - Row 2 Col 1 */}
                 <div 
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
                     transform: `rotateY(2deg) rotateX(-1deg) translateY(${scrollY * 0.03}px)`,
                     transformStyle: "preserve-3d",
+                    animationDelay: "700ms",
+                    animationFillMode: "forwards",
                   }}
                 >
                   <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
@@ -229,10 +235,12 @@ const PortfolioPage = () => {
 
                 {/* Card 4 - Flat - Row 2 Col 2 */}
                 <div 
-                  className="group cursor-pointer"
+                  className="group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
                     transform: `rotateY(-2deg) rotateX(-1deg) translateY(${scrollY * 0.035}px)`,
                     transformStyle: "preserve-3d",
+                    animationDelay: "850ms",
+                    animationFillMode: "forwards",
                   }}
                 >
                   <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
@@ -245,10 +253,12 @@ const PortfolioPage = () => {
 
                 {/* Card 5 - Sindicato - Row 3 Centered (spans 2 cols) */}
                 <div 
-                  className="md:col-span-2 flex justify-center group cursor-pointer"
+                  className="md:col-span-2 flex justify-center group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
                     transform: `rotateY(1deg) rotateX(1deg) translateY(${scrollY * 0.04}px)`,
                     transformStyle: "preserve-3d",
+                    animationDelay: "1000ms",
+                    animationFillMode: "forwards",
                   }}
                 >
                   <div className="relative w-[180px] md:w-[240px] lg:w-[280px] transition-all duration-500 group-hover:scale-[1.03]">
