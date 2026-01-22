@@ -184,9 +184,7 @@ const Contact = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="website">Site Institucional</SelectItem>
-                      <SelectItem value="ecommerce">Loja Virtual</SelectItem>
                       <SelectItem value="landing">Landing Page</SelectItem>
-                      <SelectItem value="app">Aplicativo Mobile</SelectItem>
                       <SelectItem value="other">Outro</SelectItem>
                     </SelectContent>
                   </Select>
