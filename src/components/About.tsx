@@ -2,6 +2,7 @@ import { Target, Zap, Users, Award, Code, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import teamImage from "@/assets/md_imagem_2.png";
 import cardFocoResultados from "@/assets/card-foco-resultados.png";
+import cardEntregasRapidas from "@/assets/card-entregas-rapidas.png";
 
 // Storage bucket base URL for card background images
 const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
@@ -15,7 +16,7 @@ const features = [{
   icon: Zap,
   title: "Entregas Rápidas",
   description: "Agilidade sem comprometer a qualidade, cumprindo prazos estabelecidos",
-  backgroundImage: `${STORAGE_URL}/entregas-rapidas.png`
+  backgroundImage: cardEntregasRapidas
 }, {
   icon: Users,
   title: "Suporte Dedicado",
