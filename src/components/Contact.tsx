@@ -34,8 +34,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "contato@solucdigital.com",
-      link: "mailto:contato@solucdigital.com",
+      value: "contato@mapledigital.com",
+      link: "mailto:contato@mapledigital.com",
       description: "Resposta em até 24h",
     },
   ];
