@@ -80,7 +80,7 @@ const Contact = () => {
                 {/* WhatsApp Button */}
                 <Button
                   className="w-full bg-[#25D366] hover:bg-[#1fb855] text-white text-lg py-7 shadow-lg shadow-[#25D366]/30"
-                  onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
+                  onClick={() => window.open('https://wa.me/5514383898465?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
                 >
                   <MessageCircle className="mr-2 w-6 h-6" />
                   Falar no WhatsApp
