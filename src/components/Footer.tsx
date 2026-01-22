@@ -48,8 +48,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
-              Transformamos ideias em soluções digitais de sucesso. Criando sites, 
-              landing pages e aplicativos para pequenos negócios e empreendedores.
+              Transformamos ideias em soluções digitais de sucesso. Criando sites e landing pages para pequenos negócios e empreendedores.
             </p>
             
             {/* Contact Info */}
