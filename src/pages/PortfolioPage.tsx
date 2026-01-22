@@ -10,6 +10,12 @@ import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
+// Hero card images (full landing page screenshots)
+import heroCardBarbearia from "@/assets/hero-card-barbearia.png";
+import heroCardSorvete from "@/assets/hero-card-sorvete.png";
+import heroCardLavajato from "@/assets/hero-card-lavajato.png";
+import heroCardFlat from "@/assets/hero-card-flat.png";
+import heroCardSindicato from "@/assets/hero-card-sindicato.png";
 interface Project {
   name: string;
   description: string;
@@ -163,103 +169,78 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Static Floating Cards */}
+            {/* Right Column - Static Floating Cards with Real Screenshots */}
             <div 
               className="relative h-[400px] md:h-[500px] lg:h-[600px]"
               style={{ perspective: "1500px" }}
             >
-              {/* Card 1 - Top Left - Large */}
+              {/* Card 1 - Barbearia - Top Left - Large */}
               <div 
-                className="absolute top-4 left-0 md:left-4 lg:left-8 w-[160px] md:w-[200px] lg:w-[260px] z-30 hover:scale-105 transition-transform duration-300"
+                className="absolute top-0 left-0 md:left-2 lg:left-4 w-[140px] md:w-[180px] lg:w-[240px] z-30 hover:scale-105 transition-transform duration-300"
                 style={{ 
-                  transform: `rotateY(-8deg) rotateX(5deg) translateY(${scrollY * 0.02}px)`,
+                  transform: `rotateY(8deg) rotateX(3deg) translateY(${scrollY * 0.02}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 12px 25px -8px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.2)"
+                  boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 15px 35px -10px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.3)"
                 }}
               >
-                <div className="bg-card rounded-xl overflow-hidden border border-border/50">
-                  <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-destructive"></div>
-                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <img src={barbeariaHenriqueImg} alt="Barbearia Henrique Dias" className="w-full h-[120px] md:h-[150px] lg:h-[180px] object-cover object-top" />
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 2 - Top Right - Medium */}
+              {/* Card 2 - Sorvete - Top Center */}
               <div 
-                className="absolute top-8 md:top-12 right-4 md:right-8 lg:right-12 w-[140px] md:w-[180px] lg:w-[220px] z-20 hover:scale-105 transition-transform duration-300"
+                className="absolute top-4 md:top-8 left-[35%] md:left-[38%] w-[130px] md:w-[170px] lg:w-[220px] z-40 hover:scale-105 transition-transform duration-300"
                 style={{ 
-                  transform: `rotateY(12deg) rotateX(-3deg) translateY(${scrollY * 0.03}px)`,
+                  transform: `rotateY(5deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.45), 0 10px 20px -6px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.15)"
+                  boxShadow: "0 35px 70px -18px rgba(0, 0, 0, 0.65), 0 18px 40px -12px rgba(0, 0, 0, 0.55), 0 10px 20px rgba(0, 0, 0, 0.35)"
                 }}
               >
-                <div className="bg-card rounded-xl overflow-hidden border border-border/50">
-                  <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-destructive"></div>
-                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <img src={sorveteMuitoBomImg} alt="Sorvete Muito Bom" className="w-full h-[100px] md:h-[130px] lg:h-[160px] object-cover object-top" />
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 3 - Center Right - Large (Main Focus) */}
+              {/* Card 3 - Lavajato - Top Right - Main Focus */}
               <div 
-                className="absolute top-1/3 right-0 md:right-4 w-[170px] md:w-[220px] lg:w-[280px] z-40 hover:scale-105 transition-transform duration-300"
+                className="absolute top-2 md:top-4 right-0 md:right-4 w-[150px] md:w-[200px] lg:w-[260px] z-50 hover:scale-105 transition-transform duration-300"
                 style={{ 
-                  transform: `rotateY(15deg) rotateX(8deg) translateY(${scrollY * 0.025}px)`,
+                  transform: `rotateY(10deg) rotateX(4deg) translateY(${scrollY * 0.03}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.55), 0 15px 30px -10px rgba(0, 0, 0, 0.45), 0 8px 15px rgba(0, 0, 0, 0.25)"
+                  boxShadow: "0 40px 80px -20px rgba(0, 0, 0, 0.7), 0 20px 45px -15px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(0, 0, 0, 0.4)"
                 }}
               >
-                <div className="bg-card rounded-xl overflow-hidden border border-border/50">
-                  <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-destructive"></div>
-                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <img src={lavajatoImg} alt="Lavajato Brilho Máximo" className="w-full h-[130px] md:h-[160px] lg:h-[200px] object-cover object-top" />
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 4 - Bottom Left - Medium */}
+              {/* Card 4 - Flat Rainha - Bottom Left */}
               <div 
-                className="absolute bottom-16 md:bottom-20 left-8 md:left-16 lg:left-20 w-[130px] md:w-[170px] lg:w-[200px] z-10 hover:scale-105 transition-transform duration-300"
+                className="absolute bottom-16 md:bottom-24 left-4 md:left-8 lg:left-12 w-[120px] md:w-[160px] lg:w-[200px] z-20 hover:scale-105 transition-transform duration-300"
                 style={{ 
-                  transform: `rotateY(-5deg) rotateX(10deg) translateY(${scrollY * 0.035}px)`,
+                  transform: `rotateY(6deg) rotateX(5deg) translateY(${scrollY * 0.035}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 18px 35px -8px rgba(0, 0, 0, 0.4), 0 8px 18px -5px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.15)"
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 12px 28px -8px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.25)"
                 }}
               >
-                <div className="bg-card rounded-xl overflow-hidden border border-border/50">
-                  <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-destructive"></div>
-                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <img src={flatRainhaImg} alt="Flat Rainha da Serra" className="w-full h-[90px] md:h-[120px] lg:h-[140px] object-cover object-top" />
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 5 - Bottom Right - Small */}
+              {/* Card 5 - Sindicato - Bottom Right */}
               <div 
-                className="absolute bottom-8 md:bottom-12 right-12 md:right-20 lg:right-24 w-[120px] md:w-[150px] lg:w-[180px] z-25 hover:scale-105 transition-transform duration-300"
+                className="absolute bottom-8 md:bottom-16 right-4 md:right-12 lg:right-16 w-[130px] md:w-[170px] lg:w-[220px] z-35 hover:scale-105 transition-transform duration-300"
                 style={{ 
-                  transform: `rotateY(20deg) rotateX(5deg) translateY(${scrollY * 0.04}px)`,
+                  transform: `rotateY(12deg) rotateX(3deg) translateY(${scrollY * 0.04}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 22px 45px -12px rgba(0, 0, 0, 0.48), 0 10px 22px -7px rgba(0, 0, 0, 0.38), 0 5px 10px rgba(0, 0, 0, 0.18)"
+                  boxShadow: "0 28px 55px -14px rgba(0, 0, 0, 0.55), 0 14px 32px -10px rgba(0, 0, 0, 0.45), 0 7px 14px rgba(0, 0, 0, 0.28)"
                 }}
               >
-                <div className="bg-card rounded-xl overflow-hidden border border-border/50">
-                  <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-destructive"></div>
-                    <div className="w-2 h-2 rounded-full bg-accent"></div>
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <img src={sorveteMuitoBomImg} alt="Sorvete Muito Bom" className="w-full h-[80px] md:h-[100px] lg:h-[120px] object-cover object-top" />
+                <div className="rounded-xl overflow-hidden border border-border/30">
+                  <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
                 </div>
               </div>
             </div>
