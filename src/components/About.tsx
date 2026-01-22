@@ -141,7 +141,7 @@ const About = () => {
               {/* Background Image */}
               {feature.backgroundImage && (
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-30 transition-opacity duration-300 group-hover:opacity-40"
+                  className="absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-300"
                   style={{ backgroundImage: `url(${feature.backgroundImage})` }}
                 />
               )}
