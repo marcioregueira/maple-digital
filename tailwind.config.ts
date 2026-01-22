@@ -91,6 +91,18 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" }
         },
+        "conveyor-belt": {
+          "0%": { 
+            transform: "translateY(-50%) rotateY(15deg) rotateX(5deg) rotateZ(-3deg)",
+            opacity: "0"
+          },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { 
+            transform: "translateY(150%) rotateY(15deg) rotateX(5deg) rotateZ(-3deg)",
+            opacity: "0"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -99,6 +111,7 @@ export default {
         "slide-up": "slide-up 0.8s ease-out",
         "scale-in": "scale-in 0.5s ease-out",
         "float": "float 3s ease-in-out infinite",
+        "conveyor-belt": "conveyor-belt 12s linear infinite",
       },
     },
   },
