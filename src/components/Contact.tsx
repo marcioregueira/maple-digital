@@ -38,20 +38,6 @@ const Contact = () => {
       link: "mailto:contato@solucdigital.com",
       description: "Resposta em até 24h",
     },
-    {
-      icon: Phone,
-      title: "Telefone",
-      value: "(11) 99999-9999",
-      link: "tel:+5511999999999",
-      description: "Seg - Sex, 9h às 18h",
-    },
-    {
-      icon: MapPin,
-      title: "Localização",
-      value: "Recife, PE",
-      link: null,
-      description: "Brasil",
-    },
   ];
 
   return (
