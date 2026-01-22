@@ -171,88 +171,94 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - 3 Front Cards + 2 Back Cards */}
+            {/* Right Column - Organized Floating Grid */}
             <div 
-              className="relative h-[450px] md:h-[550px] lg:h-[700px]"
-              style={{ perspective: "2500px" }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
             >
-              {/* === BACK ROW (2 cards) === */}
-              
-              {/* Back Card 1 - Barbearia - Top Left Background */}
-              <div 
-                className="absolute top-[2%] left-[0%] md:left-[5%] w-[180px] md:w-[240px] lg:w-[300px] z-10 hover:scale-105 hover:z-50 transition-all duration-500"
-                style={{ 
-                  transform: `rotateY(12deg) rotateX(4deg) translateY(${scrollY * 0.02}px)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-2xl">
-                  <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
+              {/* Grid Container */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-[600px]">
+                
+                {/* Card 1 - Barbearia - Row 1 Col 1 */}
+                <div 
+                  className="group cursor-pointer"
+                  style={{ 
+                    transform: `rotateY(-3deg) rotateX(2deg) translateY(${scrollY * 0.02}px)`,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
+                  </div>
                 </div>
-                {/* Card Shadow/Glow Effect */}
-                <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
-              </div>
 
-              {/* Back Card 2 - Sindicato - Top Right Background */}
-              <div 
-                className="absolute top-[0%] right-[-5%] md:right-[0%] w-[180px] md:w-[240px] lg:w-[300px] z-10 hover:scale-105 hover:z-50 transition-all duration-500"
-                style={{ 
-                  transform: `rotateY(12deg) rotateX(5deg) translateY(${scrollY * 0.025}px)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-2xl">
-                  <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
+                {/* Card 2 - Sorvete - Row 1 Col 2 */}
+                <div 
+                  className="group cursor-pointer"
+                  style={{ 
+                    transform: `rotateY(3deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
+                  </div>
                 </div>
-                {/* Card Shadow/Glow Effect */}
-                <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
-              </div>
 
-              {/* === FRONT ROW (3 cards - larger, more prominent) === */}
-              
-              {/* Front Card 1 - Sorvete - Left */}
-              <div 
-                className="absolute top-[30%] left-[-5%] md:left-[0%] w-[200px] md:w-[280px] lg:w-[340px] z-30 hover:scale-105 hover:z-50 transition-all duration-500"
-                style={{ 
-                  transform: `rotateY(10deg) rotateX(3deg) translateY(${scrollY * 0.03}px)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)]">
-                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
+                {/* Card 3 - Lavajato - Row 2 Col 1 */}
+                <div 
+                  className="group cursor-pointer"
+                  style={{ 
+                    transform: `rotateY(2deg) rotateX(-1deg) translateY(${scrollY * 0.03}px)`,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
+                  </div>
                 </div>
-                {/* Card Shadow/Glow Effect */}
-                <div className="absolute -bottom-6 left-6 right-6 h-12 bg-gradient-to-t from-[#E8825A]/50 to-transparent blur-2xl rounded-full" />
-              </div>
 
-              {/* Front Card 2 - Lavajato - Center (Main Focus - Largest) */}
-              <div 
-                className="absolute top-[25%] left-[25%] md:left-[28%] lg:left-[25%] w-[220px] md:w-[300px] lg:w-[380px] z-40 hover:scale-105 transition-all duration-500"
-                style={{ 
-                  transform: `rotateY(8deg) rotateX(2deg) translateY(${scrollY * 0.035}px)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden border border-white/20 bg-card shadow-[0_50px_100px_-25px_rgba(0,0,0,0.8)]">
-                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
+                {/* Card 4 - Flat - Row 2 Col 2 */}
+                <div 
+                  className="group cursor-pointer"
+                  style={{ 
+                    transform: `rotateY(-2deg) rotateX(-1deg) translateY(${scrollY * 0.035}px)`,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
+                  </div>
                 </div>
-                {/* Card Shadow/Glow Effect - Stronger for main card */}
-                <div className="absolute -bottom-8 left-8 right-8 h-16 bg-gradient-to-t from-[#C96A43]/60 to-transparent blur-3xl rounded-full" />
-              </div>
 
-              {/* Front Card 3 - Flat Rainha - Right */}
-              <div 
-                className="absolute top-[35%] right-[-10%] md:right-[-5%] lg:right-[-8%] w-[200px] md:w-[280px] lg:w-[340px] z-35 hover:scale-105 hover:z-50 transition-all duration-500"
-                style={{ 
-                  transform: `rotateY(12deg) rotateX(4deg) translateY(${scrollY * 0.04}px)`,
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)]">
-                  <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
+                {/* Card 5 - Sindicato - Row 3 Centered (spans 2 cols) */}
+                <div 
+                  className="md:col-span-2 flex justify-center group cursor-pointer"
+                  style={{ 
+                    transform: `rotateY(1deg) rotateX(1deg) translateY(${scrollY * 0.04}px)`,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                  <div className="relative w-[180px] md:w-[240px] lg:w-[280px] transition-all duration-500 group-hover:scale-[1.03]">
+                    <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),0_15px_30px_-10px_rgba(0,0,0,0.45),0_8px_16px_rgba(0,0,0,0.35)]">
+                      <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-5 left-5 right-5 h-10 bg-gradient-to-t from-[#C96A43]/50 to-transparent blur-2xl rounded-full" />
+                  </div>
                 </div>
-                {/* Card Shadow/Glow Effect */}
-                <div className="absolute -bottom-6 left-6 right-6 h-12 bg-gradient-to-t from-[#E8825A]/50 to-transparent blur-2xl rounded-full" />
+
               </div>
             </div>
           </div>
