@@ -152,19 +152,44 @@ const PortfolioPage = () => {
               </p>
             </div>
 
-            {/* Floating Image */}
-            <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{
-            animationDelay: "300ms",
-            animationFillMode: "both"
-          }}>
-              <div className="relative">
-                {/* Background glow effect */}
-                <div className="absolute -inset-8 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+            {/* Ferris Wheel Animation */}
+            <div className="order-1 lg:order-2 flex justify-center items-center animate-scale-in" 
+                 style={{ animationDelay: "300ms", animationFillMode: "both" }}>
+              <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px]">
                 
-                {/* Main image container */}
-                <div className="relative animate-float">
-                  <img alt="Maple Digital - Desenvolvimento Web" className="relative w-80 md:w-[420px] lg:w-[550px] h-auto" src="/lovable-uploads/0710c2ba-0653-4cb4-a794-ce1b2598e785.png" />
+                {/* Background glow */}
+                <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+                
+                {/* Centro da roda */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                w-14 h-14 md:w-16 md:h-16 bg-primary/20 rounded-full flex items-center justify-center z-10">
+                  <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
+                
+                {/* Cards orbitando */}
+                {[
+                  { img: barbeariaHenriqueImg, name: "Barbearia", delay: "0s" },
+                  { img: flatRainhaImg, name: "Flat Rainha", delay: "-5s" },
+                  { img: sorveteMuitoBomImg, name: "Sorvete", delay: "-10s" },
+                  { img: lavajatoImg, name: "Lavajato", delay: "-15s" }
+                ].map((project, index) => (
+                  <div
+                    key={index}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                               animate-orbit md:animate-orbit-md"
+                    style={{ animationDelay: project.delay }}
+                  >
+                    <div className="w-28 h-20 md:w-36 md:h-26 lg:w-40 lg:h-28 rounded-xl overflow-hidden 
+                                    shadow-2xl border-2 border-white/20 bg-card 
+                                    hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={project.img} 
+                        alt={project.name}
+                        className="w-full h-full object-cover object-top" 
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
