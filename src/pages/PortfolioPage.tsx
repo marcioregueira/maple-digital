@@ -171,75 +171,75 @@ const PortfolioPage = () => {
 
             {/* Right Column - Static Floating Cards with Real Screenshots */}
             <div 
-              className="relative h-[400px] md:h-[500px] lg:h-[600px]"
-              style={{ perspective: "1500px" }}
+              className="relative h-[400px] md:h-[500px] lg:h-[650px]"
+              style={{ perspective: "2000px" }}
             >
-              {/* Card 1 - Barbearia - Top Left - Large */}
+              {/* Card 1 - Barbearia - Back Left */}
               <div 
-                className="absolute top-0 left-0 md:left-2 lg:left-4 w-[140px] md:w-[180px] lg:w-[240px] z-30 hover:scale-105 transition-transform duration-300"
+                className="absolute top-[5%] left-[5%] md:left-[8%] w-[120px] md:w-[160px] lg:w-[200px] z-10 hover:scale-105 hover:z-50 transition-all duration-300"
                 style={{ 
-                  transform: `rotateY(8deg) rotateX(3deg) translateY(${scrollY * 0.02}px)`,
+                  transform: `rotateY(12deg) rotateX(4deg) translateY(${scrollY * 0.02}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 15px 35px -10px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.3)"
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 12px 25px -8px rgba(0, 0, 0, 0.4)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/30">
+                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
                   <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 2 - Sorvete - Top Center */}
+              {/* Card 2 - Lavajato - Center Main Focus (Largest) */}
               <div 
-                className="absolute top-4 md:top-8 left-[35%] md:left-[38%] w-[130px] md:w-[170px] lg:w-[220px] z-40 hover:scale-105 transition-transform duration-300"
+                className="absolute top-[8%] left-[25%] md:left-[28%] lg:left-[30%] w-[160px] md:w-[220px] lg:w-[280px] z-40 hover:scale-105 transition-all duration-300"
                 style={{ 
-                  transform: `rotateY(5deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
+                  transform: `rotateY(8deg) rotateX(3deg) translateY(${scrollY * 0.025}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 35px 70px -18px rgba(0, 0, 0, 0.65), 0 18px 40px -12px rgba(0, 0, 0, 0.55), 0 10px 20px rgba(0, 0, 0, 0.35)"
+                  boxShadow: "0 40px 80px -20px rgba(0, 0, 0, 0.7), 0 20px 40px -12px rgba(0, 0, 0, 0.55), 0 10px 20px rgba(0, 0, 0, 0.3)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/30">
-                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
+                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
+                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
-              {/* Card 3 - Lavajato - Top Right - Main Focus */}
+              {/* Card 3 - Sorvete - Right Side */}
               <div 
-                className="absolute top-2 md:top-4 right-0 md:right-4 w-[150px] md:w-[200px] lg:w-[260px] z-50 hover:scale-105 transition-transform duration-300"
+                className="absolute top-[3%] right-[2%] md:right-[5%] w-[130px] md:w-[180px] lg:w-[220px] z-30 hover:scale-105 hover:z-50 transition-all duration-300"
                 style={{ 
-                  transform: `rotateY(10deg) rotateX(4deg) translateY(${scrollY * 0.03}px)`,
+                  transform: `rotateY(15deg) rotateX(5deg) translateY(${scrollY * 0.03}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 40px 80px -20px rgba(0, 0, 0, 0.7), 0 20px 45px -15px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(0, 0, 0, 0.4)"
+                  boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 15px 30px -10px rgba(0, 0, 0, 0.45)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/30">
-                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
+                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
+                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
               {/* Card 4 - Flat Rainha - Bottom Left */}
               <div 
-                className="absolute bottom-16 md:bottom-24 left-4 md:left-8 lg:left-12 w-[120px] md:w-[160px] lg:w-[200px] z-20 hover:scale-105 transition-transform duration-300"
+                className="absolute bottom-[15%] md:bottom-[18%] left-[10%] md:left-[15%] w-[110px] md:w-[150px] lg:w-[190px] z-20 hover:scale-105 hover:z-50 transition-all duration-300"
                 style={{ 
-                  transform: `rotateY(6deg) rotateX(5deg) translateY(${scrollY * 0.035}px)`,
+                  transform: `rotateY(10deg) rotateX(6deg) translateY(${scrollY * 0.035}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 12px 28px -8px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.25)"
+                  boxShadow: "0 22px 45px -10px rgba(0, 0, 0, 0.5), 0 10px 22px -6px rgba(0, 0, 0, 0.38)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/30">
+                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
                   <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
                 </div>
               </div>
 
               {/* Card 5 - Sindicato - Bottom Right */}
               <div 
-                className="absolute bottom-8 md:bottom-16 right-4 md:right-12 lg:right-16 w-[130px] md:w-[170px] lg:w-[220px] z-35 hover:scale-105 transition-transform duration-300"
+                className="absolute bottom-[8%] md:bottom-[12%] right-[8%] md:right-[12%] w-[125px] md:w-[170px] lg:w-[210px] z-35 hover:scale-105 hover:z-50 transition-all duration-300"
                 style={{ 
-                  transform: `rotateY(12deg) rotateX(3deg) translateY(${scrollY * 0.04}px)`,
+                  transform: `rotateY(14deg) rotateX(4deg) translateY(${scrollY * 0.04}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 28px 55px -14px rgba(0, 0, 0, 0.55), 0 14px 32px -10px rgba(0, 0, 0, 0.45), 0 7px 14px rgba(0, 0, 0, 0.28)"
+                  boxShadow: "0 28px 55px -14px rgba(0, 0, 0, 0.55), 0 14px 28px -8px rgba(0, 0, 0, 0.42)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/30">
+                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
                   <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
                 </div>
               </div>
