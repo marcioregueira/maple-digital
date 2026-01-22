@@ -4,6 +4,7 @@ import teamImage from "@/assets/md_imagem_2.png";
 import cardFocoResultados from "@/assets/card-foco-resultados.png";
 import cardEntregasRapidas from "@/assets/card-entregas-rapidas.png";
 import cardSuporteDedicado from "@/assets/card-suporte-dedicado.png";
+import cardQualidadePremium from "@/assets/card-qualidade-premium.png";
 
 // Storage bucket base URL for card background images
 const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
@@ -27,7 +28,7 @@ const features = [{
   icon: Award,
   title: "Qualidade Premium",
   description: "Tecnologias modernas e código limpo seguindo as melhores práticas",
-  backgroundImage: `${STORAGE_URL}/qualidade-premium.png`
+  backgroundImage: cardQualidadePremium
 }, {
   icon: Code,
   title: "Código Escalável",
