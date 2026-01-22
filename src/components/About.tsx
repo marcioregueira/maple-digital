@@ -1,6 +1,7 @@
 import { Target, Zap, Users, Award, Code, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import teamImage from "@/assets/md_imagem_2.png";
+import cardFocoResultados from "@/assets/card-foco-resultados.png";
 
 // Storage bucket base URL for card background images
 const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
@@ -9,7 +10,7 @@ const features = [{
   icon: Target,
   title: "Foco em Resultados",
   description: "Cada projeto é desenvolvido pensando no sucesso e crescimento do seu negócio",
-  backgroundImage: `${STORAGE_URL}/foco-resultados.png`
+  backgroundImage: cardFocoResultados
 }, {
   icon: Zap,
   title: "Entregas Rápidas",
