@@ -117,13 +117,15 @@ const PortfolioPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{
-        animationDelay: "1s"
-      }} />
+      {/* Hero Section - Floating 3D Cards */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
+        {/* Gradient Background - Warm tones to dark */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
+        
+        {/* Glow Effects */}
+        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
@@ -131,40 +133,130 @@ const PortfolioPage = () => {
             Voltar para Home
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-            {/* Text Content */}
-            <div className="order-2 lg:order-1">
-              <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
-                <Sparkles className="w-3 h-3 mr-1" />
-                Portfólio Completo
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
+          {/* Text Content - Centered */}
+          <div className="text-center mb-16 relative z-20">
+            <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Portfólio Completo
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-foreground animate-slide-up" style={{
               animationDelay: "100ms",
               animationFillMode: "both"
             }}>
-                Transformamos <span className="text-primary">ideias</span> em realidade digital
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl animate-fade-in" style={{
+              Transformamos <span className="text-primary">ideias</span> em<br className="hidden md:block" /> realidade digital
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{
               animationDelay: "200ms",
               animationFillMode: "both"
             }}>
-                Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
-              </p>
+              Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
+            </p>
+          </div>
+
+          {/* Floating 3D Cards Container */}
+          <div className="relative h-[350px] md:h-[450px] lg:h-[500px] max-w-6xl mx-auto perspective-[1500px]">
+            
+            {/* Card 1 - Top Left */}
+            <div 
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              style={{
+                top: "0%",
+                left: "5%",
+                transform: "rotateY(-15deg) rotateX(5deg)",
+                animationDelay: "300ms",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
+                {/* Browser Bar */}
+                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                </div>
+                <img 
+                  src={barbeariaHenriqueImg} 
+                  alt="Barbearia Henrique Dias" 
+                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
+                />
+              </div>
             </div>
 
-            {/* Floating Image */}
-            <div className="order-1 lg:order-2 flex justify-center animate-scale-in" style={{
-            animationDelay: "300ms",
-            animationFillMode: "both"
-          }}>
-              <div className="relative">
-                {/* Background glow effect */}
-                <div className="absolute -inset-8 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-                
-                {/* Main image container */}
-                <div className="relative animate-float">
-                  <img alt="Maple Digital - Desenvolvimento Web" className="relative w-80 md:w-[420px] lg:w-[550px] h-auto" src="/lovable-uploads/0710c2ba-0653-4cb4-a794-ce1b2598e785.png" />
+            {/* Card 2 - Top Right */}
+            <div 
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              style={{
+                top: "5%",
+                right: "5%",
+                transform: "rotateY(15deg) rotateX(5deg)",
+                animationDelay: "400ms",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
+                {/* Browser Bar */}
+                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
                 </div>
+                <img 
+                  src={sorveteMuitoBomImg} 
+                  alt="Sorvete Muito Bom" 
+                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Card 3 - Bottom Left */}
+            <div 
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              style={{
+                bottom: "0%",
+                left: "15%",
+                transform: "rotateY(-10deg) rotateX(-5deg)",
+                animationDelay: "500ms",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
+                {/* Browser Bar */}
+                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                </div>
+                <img 
+                  src={lavajatoImg} 
+                  alt="Lavajato Brilho Máximo" 
+                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Card 4 - Bottom Right */}
+            <div 
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              style={{
+                bottom: "5%",
+                right: "10%",
+                transform: "rotateY(12deg) rotateX(-3deg)",
+                animationDelay: "600ms",
+                animationFillMode: "both"
+              }}
+            >
+              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
+                {/* Browser Bar */}
+                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                </div>
+                <img 
+                  src={flatRainhaImg} 
+                  alt="Flat Rainha da Serra" 
+                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
+                />
               </div>
             </div>
           </div>
