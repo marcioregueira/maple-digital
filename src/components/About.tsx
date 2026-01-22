@@ -5,6 +5,7 @@ import cardFocoResultados from "@/assets/card-foco-resultados.png";
 import cardEntregasRapidas from "@/assets/card-entregas-rapidas.png";
 import cardSuporteDedicado from "@/assets/card-suporte-dedicado.png";
 import cardQualidadePremium from "@/assets/card-qualidade-premium.png";
+import cardCodigoEscalavel from "@/assets/card-codigo-escalavel.png";
 
 // Storage bucket base URL for card background images
 const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
@@ -33,7 +34,7 @@ const features = [{
   icon: Code,
   title: "Código Escalável",
   description: "Desenvolvemos pensando no crescimento futuro da sua aplicação",
-  backgroundImage: `${STORAGE_URL}/codigo-escalavel.png`
+  backgroundImage: cardCodigoEscalavel
 }, {
   icon: Shield,
   title: "Segurança First",
