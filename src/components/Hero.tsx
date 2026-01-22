@@ -5,11 +5,16 @@ import heroImage from "@/assets/hero-landing-pages.png";
 const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{ backgroundImage: `url(${heroImage})` }} 
-      />
+      {/* Background Image with opacity matching cards */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="" 
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover opacity-100"
+        />
+      </div>
       
       {/* Gradient Overlay - Left to Right */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
