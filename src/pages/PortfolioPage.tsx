@@ -118,15 +118,14 @@ const PortfolioPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section - Floating 3D Cards */}
+      {/* Hero Section - Two Column Layout with Conveyor Belt */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Gradient Background - Warm tones to dark */}
+        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
         
         {/* Glow Effects */}
         <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
@@ -134,130 +133,121 @@ const PortfolioPage = () => {
             Voltar para Home
           </Link>
 
-          {/* Text Content - Centered */}
-          <div className="text-center mb-16 relative z-20">
-            <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
-              <Sparkles className="w-3 h-3 mr-1" />
-              Portfólio Completo
-            </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-foreground animate-slide-up" style={{
-              animationDelay: "100ms",
-              animationFillMode: "both"
-            }}>
-              Transformamos <span className="text-primary">ideias</span> em<br className="hidden md:block" /> realidade digital
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{
-              animationDelay: "200ms",
-              animationFillMode: "both"
-            }}>
-              Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
-            </p>
-          </div>
-
-          {/* Floating 3D Cards Container */}
-          <div className="relative h-[350px] md:h-[450px] lg:h-[500px] max-w-6xl mx-auto perspective-[1500px]">
+          {/* Two Column Grid */}
+          <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center min-h-[60vh]">
             
-            {/* Card 1 - Top Left */}
-            <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
-              style={{
-                top: "0%",
-                left: "5%",
-                transform: `rotateY(-15deg) rotateX(5deg) translateY(${scrollY * 0.08}px) translateX(${scrollY * -0.02}px)`,
-                animationDelay: "300ms",
+            {/* Left Column - Text Content */}
+            <div className="text-left relative z-20">
+              <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
+                <Sparkles className="w-3 h-3 mr-1" />
+                Portfólio Completo
+              </Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
+                animationDelay: "100ms",
                 animationFillMode: "both"
-              }}
-            >
-              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
-                {/* Browser Bar */}
-                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
-                </div>
-                <img 
-                  src={barbeariaHenriqueImg} 
-                  alt="Barbearia Henrique Dias" 
-                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
-                />
-              </div>
+              }}>
+                Transformamos <span className="text-primary">ideias</span> em realidade digital
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{
+                animationDelay: "200ms",
+                animationFillMode: "both"
+              }}>
+                Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
+              </p>
+              <Button 
+                onClick={scrollToContact}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in"
+                style={{ animationDelay: "300ms", animationFillMode: "both" }}
+              >
+                Iniciar Projeto
+              </Button>
             </div>
 
-            {/* Card 2 - Top Right */}
+            {/* Right Column - Conveyor Belt Cards */}
             <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
-              style={{
-                top: "5%",
-                right: "5%",
-                transform: `rotateY(15deg) rotateX(5deg) translateY(${scrollY * 0.12}px) translateX(${scrollY * 0.03}px)`,
-                animationDelay: "400ms",
-                animationFillMode: "both"
-              }}
+              className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+              style={{ perspective: "1500px" }}
             >
-              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
-                {/* Browser Bar */}
-                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+              {/* Gradient Masks for smooth fade */}
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent z-20 pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
+              
+              {/* Cards Container with 3D perspective */}
+              <div 
+                className="absolute inset-0 flex gap-4 md:gap-6 justify-center items-start pt-8"
+                style={{ 
+                  transform: "rotateY(15deg) rotateX(5deg) rotateZ(-3deg)",
+                  transformStyle: "preserve-3d"
+                }}
+              >
+                {/* Column 1 */}
+                <div className="flex flex-col gap-4 md:gap-6 animate-conveyor-belt" style={{ animationDelay: "0s" }}>
+                  {[barbeariaHenriqueImg, sorveteMuitoBomImg, lavajatoImg, flatRainhaImg, barbeariaHenriqueImg, sorveteMuitoBomImg].map((img, idx) => (
+                    <div 
+                      key={`col1-${idx}`}
+                      className="w-[140px] md:w-[180px] lg:w-[220px] shrink-0 hover:scale-105 transition-transform duration-300"
+                      style={{ 
+                        transform: `translateY(${scrollY * 0.03}px)`,
+                        boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)"
+                      }}
+                    >
+                      <div className="bg-card rounded-xl overflow-hidden border border-border/50">
+                        <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
+                          <div className="w-2 h-2 rounded-full bg-destructive"></div>
+                          <div className="w-2 h-2 rounded-full bg-accent"></div>
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <img src={img} alt="Projeto" className="w-full h-[100px] md:h-[130px] lg:h-[160px] object-cover object-top" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <img 
-                  src={sorveteMuitoBomImg} 
-                  alt="Sorvete Muito Bom" 
-                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
-                />
-              </div>
-            </div>
 
-            {/* Card 3 - Bottom Left */}
-            <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
-              style={{
-                bottom: "0%",
-                left: "15%",
-                transform: `rotateY(-10deg) rotateX(-5deg) translateY(${scrollY * 0.05}px) translateX(${scrollY * -0.04}px)`,
-                animationDelay: "500ms",
-                animationFillMode: "both"
-              }}
-            >
-              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
-                {/* Browser Bar */}
-                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                {/* Column 2 */}
+                <div className="flex flex-col gap-4 md:gap-6 animate-conveyor-belt" style={{ animationDelay: "-4s" }}>
+                  {[flatRainhaImg, barbeariaHenriqueImg, sorveteMuitoBomImg, lavajatoImg, flatRainhaImg, barbeariaHenriqueImg].map((img, idx) => (
+                    <div 
+                      key={`col2-${idx}`}
+                      className="w-[140px] md:w-[180px] lg:w-[220px] shrink-0 hover:scale-105 transition-transform duration-300"
+                      style={{ 
+                        transform: `translateY(${scrollY * 0.05}px)`,
+                        boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)"
+                      }}
+                    >
+                      <div className="bg-card rounded-xl overflow-hidden border border-border/50">
+                        <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
+                          <div className="w-2 h-2 rounded-full bg-destructive"></div>
+                          <div className="w-2 h-2 rounded-full bg-accent"></div>
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <img src={img} alt="Projeto" className="w-full h-[100px] md:h-[130px] lg:h-[160px] object-cover object-top" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <img 
-                  src={lavajatoImg} 
-                  alt="Lavajato Brilho Máximo" 
-                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
-                />
-              </div>
-            </div>
 
-            {/* Card 4 - Bottom Right */}
-            <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
-              style={{
-                bottom: "5%",
-                right: "10%",
-                transform: `rotateY(12deg) rotateX(-3deg) translateY(${scrollY * 0.1}px) translateX(${scrollY * 0.02}px)`,
-                animationDelay: "600ms",
-                animationFillMode: "both"
-              }}
-            >
-              <div className="bg-card rounded-xl overflow-hidden shadow-2xl border border-border/50" style={{ boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)" }}>
-                {/* Browser Bar */}
-                <div className="bg-muted/80 px-3 py-2 flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-destructive"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                {/* Column 3 - Hidden on mobile */}
+                <div className="hidden md:flex flex-col gap-4 md:gap-6 animate-conveyor-belt" style={{ animationDelay: "-8s" }}>
+                  {[lavajatoImg, flatRainhaImg, barbeariaHenriqueImg, sorveteMuitoBomImg, lavajatoImg, flatRainhaImg].map((img, idx) => (
+                    <div 
+                      key={`col3-${idx}`}
+                      className="w-[140px] md:w-[180px] lg:w-[220px] shrink-0 hover:scale-105 transition-transform duration-300"
+                      style={{ 
+                        transform: `translateY(${scrollY * 0.04}px)`,
+                        boxShadow: "0 25px 50px -12px hsl(var(--background) / 0.8)"
+                      }}
+                    >
+                      <div className="bg-card rounded-xl overflow-hidden border border-border/50">
+                        <div className="bg-muted/80 px-2 py-1.5 flex items-center gap-1">
+                          <div className="w-2 h-2 rounded-full bg-destructive"></div>
+                          <div className="w-2 h-2 rounded-full bg-accent"></div>
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <img src={img} alt="Projeto" className="w-full h-[100px] md:h-[130px] lg:h-[160px] object-cover object-top" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <img 
-                  src={flatRainhaImg} 
-                  alt="Flat Rainha da Serra" 
-                  className="w-full h-[120px] md:h-[180px] lg:h-[220px] object-cover object-top"
-                />
               </div>
             </div>
           </div>
