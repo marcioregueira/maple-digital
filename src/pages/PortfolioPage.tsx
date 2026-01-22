@@ -124,14 +124,16 @@ const PortfolioPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section - Two Column Layout with Conveyor Belt */}
+      {/* Hero Section - Two Column Layout with 3D Cards */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-background" />
+        {/* Dark to Orange/Coral Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-[#C96A43]/30" />
         
-        {/* Glow Effects */}
-        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: "1.5s" }} />
+        {/* Bottom Glow Effect - Coral/Orange */}
+        <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-[#C96A43]/40 via-[#C96A43]/15 to-transparent" />
+        <div className="absolute bottom-0 left-1/3 w-[600px] h-[300px] bg-[#C96A43]/30 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[250px] bg-[#E8825A]/25 rounded-full blur-[120px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
@@ -140,7 +142,7 @@ const PortfolioPage = () => {
           </Link>
 
           {/* Two Column Grid */}
-          <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center min-h-[60vh]">
+          <div className="grid lg:grid-cols-[40%_60%] gap-8 lg:gap-12 items-center min-h-[60vh]">
             
             {/* Left Column - Text Content */}
             <div className="text-left relative z-20">
@@ -169,79 +171,88 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Static Floating Cards with Real Screenshots */}
+            {/* Right Column - 3 Front Cards + 2 Back Cards */}
             <div 
-              className="relative h-[400px] md:h-[500px] lg:h-[650px]"
-              style={{ perspective: "2000px" }}
+              className="relative h-[450px] md:h-[550px] lg:h-[700px]"
+              style={{ perspective: "2500px" }}
             >
-              {/* Card 1 - Barbearia - Back Left */}
+              {/* === BACK ROW (2 cards) === */}
+              
+              {/* Back Card 1 - Barbearia - Top Left Background */}
               <div 
-                className="absolute top-[5%] left-[5%] md:left-[8%] w-[120px] md:w-[160px] lg:w-[200px] z-10 hover:scale-105 hover:z-50 transition-all duration-300"
+                className="absolute top-[2%] left-[0%] md:left-[5%] w-[180px] md:w-[240px] lg:w-[300px] z-10 hover:scale-105 hover:z-50 transition-all duration-500"
                 style={{ 
                   transform: `rotateY(12deg) rotateX(4deg) translateY(${scrollY * 0.02}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 12px 25px -8px rgba(0, 0, 0, 0.4)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
+                <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-2xl">
                   <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
                 </div>
+                {/* Card Shadow/Glow Effect */}
+                <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
               </div>
 
-              {/* Card 2 - Lavajato - Center Main Focus (Largest) */}
+              {/* Back Card 2 - Sindicato - Top Right Background */}
               <div 
-                className="absolute top-[8%] left-[25%] md:left-[28%] lg:left-[30%] w-[160px] md:w-[220px] lg:w-[280px] z-40 hover:scale-105 transition-all duration-300"
+                className="absolute top-[0%] right-[-5%] md:right-[0%] w-[180px] md:w-[240px] lg:w-[300px] z-10 hover:scale-105 hover:z-50 transition-all duration-500"
                 style={{ 
-                  transform: `rotateY(8deg) rotateX(3deg) translateY(${scrollY * 0.025}px)`,
+                  transform: `rotateY(12deg) rotateX(5deg) translateY(${scrollY * 0.025}px)`,
                   transformStyle: "preserve-3d",
-                  boxShadow: "0 40px 80px -20px rgba(0, 0, 0, 0.7), 0 20px 40px -12px rgba(0, 0, 0, 0.55), 0 10px 20px rgba(0, 0, 0, 0.3)"
                 }}
               >
-                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
-                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
-                </div>
-              </div>
-
-              {/* Card 3 - Sorvete - Right Side */}
-              <div 
-                className="absolute top-[3%] right-[2%] md:right-[5%] w-[130px] md:w-[180px] lg:w-[220px] z-30 hover:scale-105 hover:z-50 transition-all duration-300"
-                style={{ 
-                  transform: `rotateY(15deg) rotateX(5deg) translateY(${scrollY * 0.03}px)`,
-                  transformStyle: "preserve-3d",
-                  boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 15px 30px -10px rgba(0, 0, 0, 0.45)"
-                }}
-              >
-                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
-                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
-                </div>
-              </div>
-
-              {/* Card 4 - Flat Rainha - Bottom Left */}
-              <div 
-                className="absolute bottom-[15%] md:bottom-[18%] left-[10%] md:left-[15%] w-[110px] md:w-[150px] lg:w-[190px] z-20 hover:scale-105 hover:z-50 transition-all duration-300"
-                style={{ 
-                  transform: `rotateY(10deg) rotateX(6deg) translateY(${scrollY * 0.035}px)`,
-                  transformStyle: "preserve-3d",
-                  boxShadow: "0 22px 45px -10px rgba(0, 0, 0, 0.5), 0 10px 22px -6px rgba(0, 0, 0, 0.38)"
-                }}
-              >
-                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
-                  <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
-                </div>
-              </div>
-
-              {/* Card 5 - Sindicato - Bottom Right */}
-              <div 
-                className="absolute bottom-[8%] md:bottom-[12%] right-[8%] md:right-[12%] w-[125px] md:w-[170px] lg:w-[210px] z-35 hover:scale-105 hover:z-50 transition-all duration-300"
-                style={{ 
-                  transform: `rotateY(14deg) rotateX(4deg) translateY(${scrollY * 0.04}px)`,
-                  transformStyle: "preserve-3d",
-                  boxShadow: "0 28px 55px -14px rgba(0, 0, 0, 0.55), 0 14px 28px -8px rgba(0, 0, 0, 0.42)"
-                }}
-              >
-                <div className="rounded-xl overflow-hidden border border-border/20 bg-card">
+                <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-2xl">
                   <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
                 </div>
+                {/* Card Shadow/Glow Effect */}
+                <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
+              </div>
+
+              {/* === FRONT ROW (3 cards - larger, more prominent) === */}
+              
+              {/* Front Card 1 - Sorvete - Left */}
+              <div 
+                className="absolute top-[30%] left-[-5%] md:left-[0%] w-[200px] md:w-[280px] lg:w-[340px] z-30 hover:scale-105 hover:z-50 transition-all duration-500"
+                style={{ 
+                  transform: `rotateY(10deg) rotateX(3deg) translateY(${scrollY * 0.03}px)`,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)]">
+                  <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
+                </div>
+                {/* Card Shadow/Glow Effect */}
+                <div className="absolute -bottom-6 left-6 right-6 h-12 bg-gradient-to-t from-[#E8825A]/50 to-transparent blur-2xl rounded-full" />
+              </div>
+
+              {/* Front Card 2 - Lavajato - Center (Main Focus - Largest) */}
+              <div 
+                className="absolute top-[25%] left-[25%] md:left-[28%] lg:left-[25%] w-[220px] md:w-[300px] lg:w-[380px] z-40 hover:scale-105 transition-all duration-500"
+                style={{ 
+                  transform: `rotateY(8deg) rotateX(2deg) translateY(${scrollY * 0.035}px)`,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="rounded-2xl overflow-hidden border border-white/20 bg-card shadow-[0_50px_100px_-25px_rgba(0,0,0,0.8)]">
+                  <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
+                </div>
+                {/* Card Shadow/Glow Effect - Stronger for main card */}
+                <div className="absolute -bottom-8 left-8 right-8 h-16 bg-gradient-to-t from-[#C96A43]/60 to-transparent blur-3xl rounded-full" />
+              </div>
+
+              {/* Front Card 3 - Flat Rainha - Right */}
+              <div 
+                className="absolute top-[35%] right-[-10%] md:right-[-5%] lg:right-[-8%] w-[200px] md:w-[280px] lg:w-[340px] z-35 hover:scale-105 hover:z-50 transition-all duration-500"
+                style={{ 
+                  transform: `rotateY(12deg) rotateX(4deg) translateY(${scrollY * 0.04}px)`,
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)]">
+                  <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
+                </div>
+                {/* Card Shadow/Glow Effect */}
+                <div className="absolute -bottom-6 left-6 right-6 h-12 bg-gradient-to-t from-[#E8825A]/50 to-transparent blur-2xl rounded-full" />
               </div>
             </div>
           </div>
