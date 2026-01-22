@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo-maple-digital-new.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,6 @@ const Footer = () => {
     icon: Instagram,
     href: "https://instagram.com",
     label: "Instagram"
-  }, {
-    icon: Linkedin,
-    href: "https://linkedin.com",
-    label: "LinkedIn"
   }];
   const quickLinks = [{
     name: "Início",
