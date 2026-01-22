@@ -6,8 +6,9 @@ import cardEntregasRapidas from "@/assets/card-entregas-rapidas.png";
 import cardSuporteDedicado from "@/assets/card-suporte-dedicado.png";
 import cardQualidadePremium from "@/assets/card-qualidade-premium.png";
 import cardCodigoEscalavel from "@/assets/card-codigo-escalavel.png";
+import cardSegurancaFirst from "@/assets/card-seguranca-first.png";
 
-// Storage bucket base URL for card background images
+// Storage bucket base URL for card background images (no longer used - using local images)
 const STORAGE_URL = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/card-images`;
 
 const features = [{
@@ -39,7 +40,7 @@ const features = [{
   icon: Shield,
   title: "Segurança First",
   description: "Proteção de dados e segurança integradas desde o início",
-  backgroundImage: `${STORAGE_URL}/seguranca-first.png`
+  backgroundImage: cardSegurancaFirst
 }];
 const stats = [{
   number: "5+",
