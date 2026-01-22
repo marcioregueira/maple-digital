@@ -4,13 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useParallax } from "@/hooks/use-parallax";
 import { ArrowLeft, ExternalLink, Clock, CheckCircle2, MessageSquare, Palette, Code2, Rocket, Users, Award, Zap, Shield, Heart, Sparkles } from "lucide-react";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
-import mapleLogoHero from "@/assets/maple-logo-hero.png";
-import fotoLinkedin from "@/assets/foto-linkedin.png";
 interface Project {
   name: string;
   description: string;
@@ -111,6 +110,8 @@ const differentials = [{
 // Stats removed - using floating image instead
 
 const PortfolioPage = () => {
+  const scrollY = useParallax();
+  
   const scrollToContact = () => {
     window.location.href = "/#contato";
   };
@@ -158,11 +159,11 @@ const PortfolioPage = () => {
             
             {/* Card 1 - Top Left */}
             <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
               style={{
                 top: "0%",
                 left: "5%",
-                transform: "rotateY(-15deg) rotateX(5deg)",
+                transform: `rotateY(-15deg) rotateX(5deg) translateY(${scrollY * 0.08}px) translateX(${scrollY * -0.02}px)`,
                 animationDelay: "300ms",
                 animationFillMode: "both"
               }}
@@ -184,11 +185,11 @@ const PortfolioPage = () => {
 
             {/* Card 2 - Top Right */}
             <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
               style={{
                 top: "5%",
                 right: "5%",
-                transform: "rotateY(15deg) rotateX(5deg)",
+                transform: `rotateY(15deg) rotateX(5deg) translateY(${scrollY * 0.12}px) translateX(${scrollY * 0.03}px)`,
                 animationDelay: "400ms",
                 animationFillMode: "both"
               }}
@@ -210,11 +211,11 @@ const PortfolioPage = () => {
 
             {/* Card 3 - Bottom Left */}
             <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
               style={{
                 bottom: "0%",
                 left: "15%",
-                transform: "rotateY(-10deg) rotateX(-5deg)",
+                transform: `rotateY(-10deg) rotateX(-5deg) translateY(${scrollY * 0.05}px) translateX(${scrollY * -0.04}px)`,
                 animationDelay: "500ms",
                 animationFillMode: "both"
               }}
@@ -236,11 +237,11 @@ const PortfolioPage = () => {
 
             {/* Card 4 - Bottom Right */}
             <div 
-              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-all duration-500 hover:scale-105 hover:z-50 animate-fade-in"
+              className="absolute w-[180px] md:w-[260px] lg:w-[320px] transition-transform duration-100 hover:scale-105 hover:z-50 animate-fade-in"
               style={{
                 bottom: "5%",
                 right: "10%",
-                transform: "rotateY(12deg) rotateX(-3deg)",
+                transform: `rotateY(12deg) rotateX(-3deg) translateY(${scrollY * 0.1}px) translateX(${scrollY * 0.02}px)`,
                 animationDelay: "600ms",
                 animationFillMode: "both"
               }}
