@@ -88,7 +88,11 @@ const Footer = () => {
             <p className="text-muted-foreground mb-6">
               Siga-nos nas redes sociais e fique por dentro das novidades
             </p>
-            
+            <div className="flex gap-3">
+              {socialLinks.map((social, index) => <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="w-12 h-12 rounded-xl bg-primary/20 hover:bg-primary flex items-center justify-center transition-all duration-300 group">
+                  <social.icon className="w-5 h-5 text-primary group-hover:text-background transition-colors" />
+                </a>)}
+            </div>
           </div>
         </div>
 
