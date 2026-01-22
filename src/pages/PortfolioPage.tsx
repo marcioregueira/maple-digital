@@ -171,101 +171,116 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Organized Floating Grid */}
+            {/* Right Column - Isometric View */}
             <div 
-              className="relative flex items-center justify-center"
-              style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
+              className="relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[550px]"
+              style={{ perspective: "1500px", transformStyle: "preserve-3d" }}
             >
-              {/* Grid Container */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-[600px]">
+              {/* Isometric Container */}
+              <div 
+                className="relative w-full h-full"
+                style={{ transformStyle: "preserve-3d" }}
+              >
                 
-                {/* Card 1 - Barbearia - Row 1 Col 1 */}
+                {/* Back Layer - Card 5 (Sindicato) - Centered */}
                 <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
+                  className="absolute left-1/2 group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
-                    transform: `rotateY(-3deg) rotateX(2deg) translateY(${scrollY * 0.02}px)`,
+                    top: "0%",
+                    transform: `translateX(-50%) rotateX(55deg) translateZ(-60px) translateY(${scrollY * 0.02}px)`,
                     transformStyle: "preserve-3d",
+                    zIndex: 30,
                     animationDelay: "400ms",
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
+                  <div className="relative w-[140px] md:w-[180px] lg:w-[220px] transition-all duration-500 group-hover:scale-[1.05] group-hover:translate-z-[20px]">
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-card shadow-[0_30px_40px_-10px_rgba(0,0,0,0.5),0_50px_60px_-20px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
                     </div>
                     <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
                   </div>
                 </div>
 
-                {/* Card 2 - Sorvete - Row 1 Col 2 */}
+                {/* Middle Layer - Cards 3 & 4 */}
                 <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
+                  className="absolute group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
-                    transform: `rotateY(3deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
+                    top: "25%",
+                    left: "15%",
+                    transform: `rotateX(55deg) translateZ(-30px) translateY(${scrollY * 0.025}px)`,
                     transformStyle: "preserve-3d",
+                    zIndex: 40,
                     animationDelay: "550ms",
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card 3 - Lavajato - Row 2 Col 1 */}
-                <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(2deg) rotateX(-1deg) translateY(${scrollY * 0.03}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "700ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                  <div className="relative w-[150px] md:w-[200px] lg:w-[240px] transition-all duration-500 group-hover:scale-[1.05] group-hover:translate-z-[20px]">
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-card shadow-[0_30px_40px_-10px_rgba(0,0,0,0.5),0_50px_60px_-20px_rgba(0,0,0,0.3)]">
                       <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
                     </div>
                     <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
                   </div>
                 </div>
-
-                {/* Card 4 - Flat - Row 2 Col 2 */}
+                
                 <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
+                  className="absolute group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
-                    transform: `rotateY(-2deg) rotateX(-1deg) translateY(${scrollY * 0.035}px)`,
+                    top: "25%",
+                    right: "15%",
+                    transform: `rotateX(55deg) translateZ(-30px) translateY(${scrollY * 0.03}px)`,
                     transformStyle: "preserve-3d",
-                    animationDelay: "850ms",
+                    zIndex: 40,
+                    animationDelay: "700ms",
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
+                  <div className="relative w-[150px] md:w-[200px] lg:w-[240px] transition-all duration-500 group-hover:scale-[1.05] group-hover:translate-z-[20px]">
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-card shadow-[0_30px_40px_-10px_rgba(0,0,0,0.5),0_50px_60px_-20px_rgba(0,0,0,0.3)]">
                       <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
                     </div>
                     <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
                   </div>
                 </div>
 
-                {/* Card 5 - Sindicato - Row 3 Centered (spans 2 cols) */}
+                {/* Front Layer - Cards 1 & 2 */}
                 <div 
-                  className="md:col-span-2 flex justify-center group cursor-pointer animate-fade-in opacity-0"
+                  className="absolute group cursor-pointer animate-fade-in opacity-0"
                   style={{ 
-                    transform: `rotateY(1deg) rotateX(1deg) translateY(${scrollY * 0.04}px)`,
+                    bottom: "5%",
+                    left: "10%",
+                    transform: `rotateX(55deg) translateZ(0px) translateY(${scrollY * 0.035}px)`,
                     transformStyle: "preserve-3d",
+                    zIndex: 50,
+                    animationDelay: "850ms",
+                    animationFillMode: "forwards",
+                  }}
+                >
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] transition-all duration-500 group-hover:scale-[1.05] group-hover:translate-z-[20px]">
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-card shadow-[0_30px_40px_-10px_rgba(0,0,0,0.5),0_50px_60px_-20px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
+                    </div>
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
+                  </div>
+                </div>
+                
+                <div 
+                  className="absolute group cursor-pointer animate-fade-in opacity-0"
+                  style={{ 
+                    bottom: "5%",
+                    right: "10%",
+                    transform: `rotateX(55deg) translateZ(0px) translateY(${scrollY * 0.04}px)`,
+                    transformStyle: "preserve-3d",
+                    zIndex: 50,
                     animationDelay: "1000ms",
                     animationFillMode: "forwards",
                   }}
                 >
-                  <div className="relative w-[180px] md:w-[240px] lg:w-[280px] transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),0_15px_30px_-10px_rgba(0,0,0,0.45),0_8px_16px_rgba(0,0,0,0.35)]">
-                      <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
+                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] transition-all duration-500 group-hover:scale-[1.05] group-hover:translate-z-[20px]">
+                    <div className="rounded-xl overflow-hidden border border-white/10 bg-card shadow-[0_30px_40px_-10px_rgba(0,0,0,0.5),0_50px_60px_-20px_rgba(0,0,0,0.3)]">
+                      <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
                     </div>
-                    <div className="absolute -bottom-5 left-5 right-5 h-10 bg-gradient-to-t from-[#C96A43]/50 to-transparent blur-2xl rounded-full" />
+                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
                   </div>
                 </div>
 
