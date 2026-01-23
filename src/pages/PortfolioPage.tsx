@@ -203,9 +203,14 @@ const PortfolioPage = () => {
 
               {/* Devices Image with Pulsing Glow */}
               <div className="relative z-10">
-                {/* Pulsing Glow Effect Behind Image */}
+                {/* Pulsing Glow Effect Behind Image - More Intense */}
                 <div 
-                  className="absolute inset-0 -inset-x-12 -inset-y-8 bg-primary/30 rounded-[50%] blur-[80px] animate-glow-pulse"
+                  className="absolute -inset-16 bg-primary/50 rounded-[50%] blur-[100px] animate-glow-pulse"
+                />
+                {/* Secondary Glow Layer for Extra Depth */}
+                <div 
+                  className="absolute -inset-8 bg-primary/35 rounded-[50%] blur-[60px] animate-glow-pulse"
+                  style={{ animationDelay: '0.5s' }}
                 />
                 
                 <img 
