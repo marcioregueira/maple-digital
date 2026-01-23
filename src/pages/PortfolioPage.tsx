@@ -141,28 +141,30 @@ const PortfolioPage = () => {
                 Portfólio Completo
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
-                animationDelay: "100ms",
-                animationFillMode: "both"
-              }}>
+              animationDelay: "100ms",
+              animationFillMode: "both"
+            }}>
                 Transformamos <span className="text-primary">ideias</span> em realidade digital
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{
-                animationDelay: "200ms",
-                animationFillMode: "both"
-              }}>
+              animationDelay: "200ms",
+              animationFillMode: "both"
+            }}>
                 Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
               </p>
-              <Button 
-                onClick={scrollToContact}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in"
-                style={{ animationDelay: "300ms", animationFillMode: "both" }}
-              >
+              <Button onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in" style={{
+              animationDelay: "300ms",
+              animationFillMode: "both"
+            }}>
                 Iniciar Projeto
               </Button>
             </div>
 
             {/* Right Column - Devices Image with Enhanced Effects */}
-            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "both" }}>
+            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{
+            animationDelay: "150ms",
+            animationFillMode: "both"
+          }}>
               
               {/* Tech Grid Background */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -204,29 +206,18 @@ const PortfolioPage = () => {
               {/* Devices Image with Pulsing Glow */}
               <div className="relative z-10">
                 {/* Pulsing Glow Effect Behind Image - More Intense */}
-                <div 
-                  className="absolute -inset-16 bg-primary/50 rounded-[50%] blur-[100px] animate-glow-pulse"
-                />
+                <div className="absolute -inset-16 bg-primary/50 rounded-[50%] blur-[100px] animate-glow-pulse" />
                 {/* Secondary Glow Layer for Extra Depth */}
-                <div 
-                  className="absolute -inset-8 bg-primary/35 rounded-[50%] blur-[60px] animate-glow-pulse"
-                  style={{ animationDelay: '0.5s' }}
-                />
+                <div className="absolute -inset-8 bg-primary/35 rounded-[50%] blur-[60px] animate-glow-pulse" style={{
+                animationDelay: '0.5s'
+              }} />
                 
-                <img 
-                  src={heroDevicesImg} 
-                  alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
-                  className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_50px_100px_rgba(0,0,0,0.85)]"
-                />
+                <img alt="Maple Digital - Sites responsivos em múltiplos dispositivos" className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_50px_100px_rgba(0,0,0,0.85)]" src="/lovable-uploads/35a372ca-4493-4152-864a-5d814d210d97.png" />
                 
                 {/* Enhanced Projected Shadow - Stronger */}
-                <div 
-                  className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] h-16 bg-black/80 blur-[50px] rounded-[100%]"
-                />
+                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] h-16 bg-black/80 blur-[50px] rounded-[100%]" />
                 {/* Secondary Shadow Layer */}
-                <div 
-                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/70 blur-2xl rounded-[100%]"
-                />
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/70 blur-2xl rounded-[100%]" />
               </div>
             </div>
           </div>
