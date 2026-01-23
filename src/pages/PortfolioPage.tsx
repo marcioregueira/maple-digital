@@ -9,7 +9,7 @@ import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
-
+import heroDevicesImg from "@/assets/hero-portfolio-devices.png";
 interface Project {
   name: string;
   description: string;
@@ -116,7 +116,7 @@ const PortfolioPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section - Floating Abstract Art */}
+      {/* Hero Section - Devices Image */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
         {/* Harmonized Background with Site Theme */}
         <div className="absolute inset-0 bg-background" />
@@ -126,67 +126,6 @@ const PortfolioPage = () => {
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[180px]" />
         <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
 
-        {/* Floating Abstract Elements - Right Side */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Large Circle - Top Right */}
-          <div 
-            className="absolute top-20 right-16 w-72 h-72 rounded-full border-2 border-primary/15 animate-float opacity-20"
-            style={{ animationDuration: "8s" }}
-          />
-          
-          {/* Medium Hexagon Shape - Center Right */}
-          <div 
-            className="absolute top-1/3 right-1/4 w-40 h-40 bg-primary/8 rotate-45 rounded-xl animate-float opacity-15"
-            style={{ animationDuration: "10s", animationDelay: "2s" }}
-          />
-          
-          {/* Small Circle - Bottom Right */}
-          <div 
-            className="absolute bottom-1/3 right-20 w-24 h-24 rounded-full bg-primary/10 animate-float opacity-20"
-            style={{ animationDuration: "6s", animationDelay: "1s" }}
-          />
-          
-          {/* Code Brackets - Abstract Tech Symbol */}
-          <div 
-            className="absolute top-1/2 right-[15%] text-primary/10 text-8xl font-mono animate-float opacity-15"
-            style={{ animationDuration: "12s", animationDelay: "3s" }}
-          >
-            {"</>"}
-          </div>
-          
-          {/* Floating Dots Pattern */}
-          <div className="absolute top-32 right-1/3 flex gap-4 animate-float opacity-10" style={{ animationDuration: "7s", animationDelay: "0.5s" }}>
-            <div className="w-3 h-3 rounded-full bg-primary" />
-            <div className="w-3 h-3 rounded-full bg-primary" />
-            <div className="w-3 h-3 rounded-full bg-primary" />
-          </div>
-          
-          {/* Larger Abstract Shape - Top */}
-          <div 
-            className="absolute top-16 right-[40%] w-20 h-20 border border-primary/20 rounded-full animate-float opacity-10"
-            style={{ animationDuration: "9s", animationDelay: "4s" }}
-          />
-          
-          {/* Connecting Lines Pattern */}
-          <div 
-            className="absolute bottom-1/4 right-1/3 w-64 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse opacity-20"
-          />
-          <div 
-            className="absolute bottom-[30%] right-[25%] w-48 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-pulse opacity-15"
-            style={{ animationDelay: "1s" }}
-          />
-          
-          {/* Small Accent Squares */}
-          <div 
-            className="absolute top-1/4 right-10 w-8 h-8 border border-primary/25 rotate-12 animate-float opacity-20"
-            style={{ animationDuration: "11s", animationDelay: "2.5s" }}
-          />
-          <div 
-            className="absolute bottom-40 right-[30%] w-6 h-6 bg-primary/10 rotate-45 animate-float opacity-15"
-            style={{ animationDuration: "8s", animationDelay: "1.5s" }}
-          />
-        </div>
-
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
             <ArrowLeft className="w-4 h-4" />
@@ -194,10 +133,10 @@ const PortfolioPage = () => {
           </Link>
 
           {/* Two Column Grid */}
-          <div className="grid lg:grid-cols-[45%_55%] gap-8 lg:gap-12 items-center min-h-[60vh]">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[60vh]">
             
             {/* Left Column - Text Content */}
-            <div className="text-left relative z-20">
+            <div className="text-left relative z-20 order-2 lg:order-1">
               <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
                 <Sparkles className="w-3 h-3 mr-1" />
                 Portfólio Completo
@@ -223,8 +162,20 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Empty (Art is in absolute positioned container) */}
-            <div className="hidden lg:block" />
+            {/* Right Column - Devices Image with Drop Shadow */}
+            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "both" }}>
+              <div className="relative">
+                <img 
+                  src={heroDevicesImg} 
+                  alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
+                  className="w-full max-w-2xl h-auto object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.5)]"
+                />
+                {/* Bottom Projected Shadow */}
+                <div 
+                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-black/40 blur-2xl rounded-[100%]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
