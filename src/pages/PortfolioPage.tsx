@@ -4,18 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useParallax } from "@/hooks/use-parallax";
-import { ArrowLeft, ExternalLink, Clock, CheckCircle2, MessageSquare, Palette, Code2, Rocket, Users, Award, Zap, Shield, Heart, Sparkles } from "lucide-react";
+import { ArrowLeft, ExternalLink, Clock, CheckCircle2, MessageSquare, Palette, Code2, Rocket, Users, Zap, Shield, Heart, Sparkles } from "lucide-react";
 import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
 import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
 import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
 import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
-// Hero card images (full landing page screenshots)
-import heroCardBarbearia from "@/assets/hero-card-barbearia.png";
-import heroCardSorvete from "@/assets/hero-card-sorvete.png";
-import heroCardLavajato from "@/assets/hero-card-lavajato.png";
-import heroCardFlat from "@/assets/hero-card-flat.png";
-import heroCardSindicato from "@/assets/hero-card-sindicato.png";
+import heroPortfolioDigital from "@/assets/hero-portfolio-digital.png";
 interface Project {
   name: string;
   description: string;
@@ -116,8 +110,6 @@ const differentials = [{
 // Stats removed - using floating image instead
 
 const PortfolioPage = () => {
-  const scrollY = useParallax();
-  
   const scrollToContact = () => {
     window.location.href = "/#contato";
   };
@@ -171,104 +163,16 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Organized Floating Grid */}
-            <div 
-              className="relative flex items-center justify-center"
-              style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
-            >
-              {/* Grid Container */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-[600px]">
-                
-                {/* Card 1 - Barbearia - Row 1 Col 1 */}
-                <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(-3deg) rotateX(2deg) translateY(${scrollY * 0.02}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "400ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardBarbearia} alt="Barbearia Henrique Dias" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card 2 - Sorvete - Row 1 Col 2 */}
-                <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(3deg) rotateX(2deg) translateY(${scrollY * 0.025}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "550ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardSorvete} alt="Sorvete Muito Bom" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card 3 - Lavajato - Row 2 Col 1 */}
-                <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(2deg) rotateX(-1deg) translateY(${scrollY * 0.03}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "700ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardLavajato} alt="Lavajato Brilho Máximo" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#C96A43]/40 to-transparent blur-xl rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card 4 - Flat - Row 2 Col 2 */}
-                <div 
-                  className="group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(-2deg) rotateX(-1deg) translateY(${scrollY * 0.035}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "850ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[160px] md:w-[220px] lg:w-[260px] mx-auto transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/10 bg-card shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_12px_24px_-8px_rgba(0,0,0,0.4),0_6px_12px_rgba(0,0,0,0.3)]">
-                      <img src={heroCardFlat} alt="Flat Rainha da Serra" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-4 left-4 right-4 h-8 bg-gradient-to-t from-[#E8825A]/40 to-transparent blur-xl rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card 5 - Sindicato - Row 3 Centered (spans 2 cols) */}
-                <div 
-                  className="md:col-span-2 flex justify-center group cursor-pointer animate-fade-in opacity-0"
-                  style={{ 
-                    transform: `rotateY(1deg) rotateX(1deg) translateY(${scrollY * 0.04}px)`,
-                    transformStyle: "preserve-3d",
-                    animationDelay: "1000ms",
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="relative w-[180px] md:w-[240px] lg:w-[280px] transition-all duration-500 group-hover:scale-[1.03]">
-                    <div className="rounded-2xl overflow-hidden border border-white/15 bg-card shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6),0_15px_30px_-10px_rgba(0,0,0,0.45),0_8px_16px_rgba(0,0,0,0.35)]">
-                      <img src={heroCardSindicato} alt="Sindicato dos Insaciáveis" className="w-full h-auto object-cover" />
-                    </div>
-                    <div className="absolute -bottom-5 left-5 right-5 h-10 bg-gradient-to-t from-[#C96A43]/50 to-transparent blur-2xl rounded-full" />
-                  </div>
-                </div>
-
+            {/* Right Column - Hero Image */}
+            <div className="relative flex items-center justify-center animate-fade-in" style={{ animationDelay: "400ms", animationFillMode: "both" }}>
+              <div className="relative w-full max-w-2xl">
+                <img 
+                  src={heroPortfolioDigital} 
+                  alt="Transformação Digital - Interfaces flutuantes" 
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
+                {/* Glow effect below image */}
+                <div className="absolute -bottom-8 left-1/4 right-1/4 h-16 bg-gradient-to-t from-primary/40 to-transparent blur-2xl rounded-full" />
               </div>
             </div>
           </div>
@@ -459,7 +363,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Badge className="bg-primary/10 text-primary border-primary/30 mb-6">
-              <Award className="w-3 h-3 mr-1" />
+              <Sparkles className="w-3 h-3 mr-1" />
               Vamos Conversar
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
