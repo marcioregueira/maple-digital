@@ -103,6 +103,16 @@ export default {
             opacity: "0"
           }
         },
+        "glow-pulse": {
+          "0%, 100%": { 
+            opacity: "0.4",
+            transform: "scale(1)"
+          },
+          "50%": { 
+            opacity: "0.7",
+            transform: "scale(1.05)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +122,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out",
         "float": "float 3s ease-in-out infinite",
         "conveyor-belt": "conveyor-belt 12s linear infinite",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
       },
     },
   },

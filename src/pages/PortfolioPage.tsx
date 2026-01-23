@@ -161,40 +161,59 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Devices Image with Enhanced Drop Shadow */}
+            {/* Right Column - Devices Image with Enhanced Effects */}
             <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "both" }}>
               
-              {/* Subtle Geometric Background Elements */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* Large outer circle */}
-                <div className="absolute w-[450px] h-[450px] rounded-full border border-primary/10" />
+              {/* Tech Grid Background */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                {/* Diagonal Grid Lines */}
+                <svg className="absolute w-[600px] h-[600px] opacity-[0.06]" viewBox="0 0 600 600">
+                  {/* Vertical lines */}
+                  <line x1="100" y1="0" x2="100" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="200" y1="0" x2="200" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="300" y1="0" x2="300" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="400" y1="0" x2="400" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="500" y1="0" x2="500" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  {/* Horizontal lines */}
+                  <line x1="0" y1="100" x2="600" y2="100" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="0" y1="200" x2="600" y2="200" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="0" y1="300" x2="600" y2="300" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="0" y1="400" x2="600" y2="400" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  <line x1="0" y1="500" x2="600" y2="500" stroke="currentColor" strokeWidth="1" className="text-primary" />
+                  {/* Diagonal accent lines */}
+                  <line x1="0" y1="0" x2="600" y2="600" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+                  <line x1="600" y1="0" x2="0" y2="600" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
+                </svg>
+
+                {/* Concentric circles */}
+                <div className="absolute w-[500px] h-[500px] rounded-full border border-primary/[0.08]" />
+                <div className="absolute w-[380px] h-[380px] rounded-full border border-primary/[0.06]" />
+                <div className="absolute w-[260px] h-[260px] rounded-full border border-primary/[0.1]" />
                 
-                {/* Medium circle */}
-                <div className="absolute w-[320px] h-[320px] rounded-full border border-primary/[0.07]" />
+                {/* Corner accent squares */}
+                <div className="absolute -top-8 right-8 w-24 h-24 border border-primary/[0.08] rotate-45" />
+                <div className="absolute bottom-12 -left-8 w-16 h-16 border border-primary/[0.06] rotate-[30deg]" />
                 
-                {/* Small inner circle */}
-                <div className="absolute w-[180px] h-[180px] rounded-full border border-primary/[0.12]" />
-                
-                {/* Rotated square accent - top right */}
-                <div className="absolute -top-4 right-1/4 w-20 h-20 border border-primary/[0.08] rotate-45" />
-                
-                {/* Rotated square accent - bottom left */}
-                <div className="absolute bottom-1/4 -left-4 w-14 h-14 border border-primary/[0.06] rotate-[30deg]" />
-                
-                {/* Decorative dots */}
-                <div className="absolute top-1/4 left-1/3 w-2 h-2 rounded-full bg-primary/20" />
-                <div className="absolute bottom-1/3 right-1/4 w-2.5 h-2.5 rounded-full bg-primary/15" />
-                <div className="absolute top-1/2 left-1/5 w-1.5 h-1.5 rounded-full bg-primary/25" />
-                <div className="absolute bottom-1/4 right-1/3 w-1.5 h-1.5 rounded-full bg-primary/20" />
+                {/* Tech dots at intersections */}
+                <div className="absolute top-[20%] left-[30%] w-2 h-2 rounded-full bg-primary/20" />
+                <div className="absolute top-[30%] right-[25%] w-1.5 h-1.5 rounded-full bg-primary/25" />
+                <div className="absolute bottom-[25%] left-[25%] w-2.5 h-2.5 rounded-full bg-primary/15" />
+                <div className="absolute bottom-[35%] right-[30%] w-1.5 h-1.5 rounded-full bg-primary/20" />
               </div>
 
-              {/* Devices Image */}
+              {/* Devices Image with Pulsing Glow */}
               <div className="relative z-10">
+                {/* Pulsing Glow Effect Behind Image */}
+                <div 
+                  className="absolute inset-0 -inset-x-12 -inset-y-8 bg-primary/30 rounded-[50%] blur-[80px] animate-glow-pulse"
+                />
+                
                 <img 
                   src={heroDevicesImg} 
                   alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
-                  className="w-full max-w-2xl h-auto object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]"
+                  className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]"
                 />
+                
                 {/* Enhanced Projected Shadow */}
                 <div 
                   className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/60 blur-3xl rounded-[100%]"
