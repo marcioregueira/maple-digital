@@ -163,7 +163,33 @@ const PortfolioPage = () => {
 
             {/* Right Column - Devices Image with Enhanced Drop Shadow */}
             <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "both" }}>
-              <div className="relative">
+              
+              {/* Subtle Geometric Background Elements */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                {/* Large outer circle */}
+                <div className="absolute w-[450px] h-[450px] rounded-full border border-primary/10" />
+                
+                {/* Medium circle */}
+                <div className="absolute w-[320px] h-[320px] rounded-full border border-primary/[0.07]" />
+                
+                {/* Small inner circle */}
+                <div className="absolute w-[180px] h-[180px] rounded-full border border-primary/[0.12]" />
+                
+                {/* Rotated square accent - top right */}
+                <div className="absolute -top-4 right-1/4 w-20 h-20 border border-primary/[0.08] rotate-45" />
+                
+                {/* Rotated square accent - bottom left */}
+                <div className="absolute bottom-1/4 -left-4 w-14 h-14 border border-primary/[0.06] rotate-[30deg]" />
+                
+                {/* Decorative dots */}
+                <div className="absolute top-1/4 left-1/3 w-2 h-2 rounded-full bg-primary/20" />
+                <div className="absolute bottom-1/3 right-1/4 w-2.5 h-2.5 rounded-full bg-primary/15" />
+                <div className="absolute top-1/2 left-1/5 w-1.5 h-1.5 rounded-full bg-primary/25" />
+                <div className="absolute bottom-1/4 right-1/3 w-1.5 h-1.5 rounded-full bg-primary/20" />
+              </div>
+
+              {/* Devices Image */}
+              <div className="relative z-10">
                 <img 
                   src={heroDevicesImg} 
                   alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
