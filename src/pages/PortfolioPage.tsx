@@ -118,13 +118,12 @@ const PortfolioPage = () => {
 
       {/* Hero Section - Devices Image */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Harmonized Background with Site Theme */}
+        {/* Clean Dark Background */}
         <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-secondary/5" />
         
-        {/* Subtle Primary Glow Effects */}
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[180px]" />
-        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
+        {/* Subtle Glow Behind Image Area */}
+        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[200px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
@@ -162,17 +161,17 @@ const PortfolioPage = () => {
               </Button>
             </div>
 
-            {/* Right Column - Devices Image with Drop Shadow */}
+            {/* Right Column - Devices Image with Enhanced Drop Shadow */}
             <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "150ms", animationFillMode: "both" }}>
               <div className="relative">
                 <img 
                   src={heroDevicesImg} 
                   alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
-                  className="w-full max-w-2xl h-auto object-contain drop-shadow-[0_35px_60px_rgba(0,0,0,0.5)]"
+                  className="w-full max-w-2xl h-auto object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]"
                 />
-                {/* Bottom Projected Shadow */}
+                {/* Enhanced Projected Shadow */}
                 <div 
-                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-black/40 blur-2xl rounded-[100%]"
+                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/60 blur-3xl rounded-[100%]"
                 />
               </div>
             </div>
