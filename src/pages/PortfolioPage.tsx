@@ -216,12 +216,16 @@ const PortfolioPage = () => {
                 <img 
                   src={heroDevicesImg} 
                   alt="Maple Digital - Sites responsivos em múltiplos dispositivos" 
-                  className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)]"
+                  className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_50px_100px_rgba(0,0,0,0.85)]"
                 />
                 
-                {/* Enhanced Projected Shadow */}
+                {/* Enhanced Projected Shadow - Stronger */}
                 <div 
-                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[85%] h-12 bg-black/60 blur-3xl rounded-[100%]"
+                  className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] h-16 bg-black/80 blur-[50px] rounded-[100%]"
+                />
+                {/* Secondary Shadow Layer */}
+                <div 
+                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/70 blur-2xl rounded-[100%]"
                 />
               </div>
             </div>
