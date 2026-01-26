@@ -116,55 +116,18 @@ const PortfolioPage = () => {
   return <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section - Devices Image */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Multi-Directional Gradient Background - Subtle */}
-        <div 
-          className="absolute inset-0" 
-          style={{
-            background: `
-              radial-gradient(ellipse 80% 60% at 80% 50%, hsla(0, 35%, 12%, 0.25) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 50% at 70% 40%, hsla(0, 25%, 10%, 0.2) 0%, transparent 50%),
-              radial-gradient(ellipse 50% 80% at 100% 60%, hsla(0, 40%, 14%, 0.15) 0%, transparent 55%),
-              linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 12%, 6%) 50%, hsl(0, 20%, 8%) 100%)
-            `
-          }}
-        />
-        
-        {/* Concentric Circles in Hero Background - Centered behind the devices image */}
-        <div className="absolute top-[50%] right-[-5%] lg:right-[5%] xl:right-[8%] -translate-y-1/2 pointer-events-none z-[1]">
-          {/* Outermost Circle - Largest */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border-[5px] border-primary/[0.08]"
+      {/* Hero Section - Full Image */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/hero-portfolio-new.png"
+            alt="Maple Digital - Sites responsivos"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Second Circle */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full border-[4px] border-primary/[0.1]"
-          />
-          {/* Third Circle */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[4px] border-primary/[0.12]"
-          />
-          {/* Fourth Circle */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border-[3px] border-primary/[0.15]"
-          />
-          {/* Innermost Circle - Smallest */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border-[3px] border-primary/[0.18]"
-          />
+          {/* Overlay gradient for text readability on left */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
         </div>
-        
-        {/* Decorative Luminous Dots */}
-        <div className="absolute top-[15%] left-[10%] w-1 h-1 rounded-full bg-primary/40" />
-        <div className="absolute top-[25%] left-[20%] w-1.5 h-1.5 rounded-full bg-primary/25" />
-        <div className="absolute top-[45%] left-[8%] w-1 h-1 rounded-full bg-primary/35" />
-        <div className="absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-primary/20" />
-        <div className="absolute top-[75%] left-[25%] w-1 h-1 rounded-full bg-primary/30" />
-        <div className="absolute top-[20%] right-[8%] w-1.5 h-1.5 rounded-full bg-primary/30" />
-        <div className="absolute top-[50%] right-[5%] w-1 h-1 rounded-full bg-primary/25" />
-        <div className="absolute bottom-[20%] right-[12%] w-2 h-2 rounded-full bg-primary/20" />
-
 
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
@@ -172,59 +135,30 @@ const PortfolioPage = () => {
             Voltar para Home
           </Link>
 
-          {/* Two Column Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[60vh]">
-            
-            {/* Left Column - Text Content */}
-            <div className="text-left relative z-20 order-2 lg:order-1">
-              <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
-                <Sparkles className="w-3 h-3 mr-1" />
-                Portfólio Completo
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
+          {/* Text Content - Left Aligned */}
+          <div className="max-w-2xl">
+            <Badge className="bg-primary/10 text-primary border-primary/30 mb-6 animate-fade-in">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Portfólio Completo
+            </Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
               animationDelay: "100ms",
               animationFillMode: "both"
             }}>
-                Transformamos <span className="text-primary">ideias</span> em realidade digital
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{
+              Transformamos <span className="text-primary">ideias</span> em realidade digital
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{
               animationDelay: "200ms",
               animationFillMode: "both"
             }}>
-                Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
-              </p>
-              <Button onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in" style={{
+              Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
+            </p>
+            <Button onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in" style={{
               animationDelay: "300ms",
               animationFillMode: "both"
             }}>
-                Iniciar Projeto
-              </Button>
-            </div>
-
-            {/* Right Column - Devices Image with Enhanced Effects */}
-            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in" style={{
-            animationDelay: "150ms",
-            animationFillMode: "both"
-          }}>
-              
-
-              {/* Devices Image with Pulsing Glow */}
-              <div className="relative z-10">
-                {/* Pulsing Glow Effect Behind Image - More Intense */}
-                <div className="absolute -inset-16 bg-primary/50 rounded-[50%] blur-[100px] animate-glow-pulse" />
-                {/* Secondary Glow Layer for Extra Depth */}
-                <div className="absolute -inset-8 bg-primary/35 rounded-[50%] blur-[60px] animate-glow-pulse" style={{
-                animationDelay: '0.5s'
-              }} />
-                
-                <img alt="Maple Digital - Sites responsivos em múltiplos dispositivos" className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_50px_100px_rgba(0,0,0,0.85)]" src="/lovable-uploads/35a372ca-4493-4152-864a-5d814d210d97.png" />
-                
-                {/* Enhanced Projected Shadow - Stronger */}
-                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[90%] h-16 bg-black/80 blur-[50px] rounded-[100%]" />
-                {/* Secondary Shadow Layer */}
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/70 blur-2xl rounded-[100%]" />
-              </div>
-            </div>
+              Iniciar Projeto
+            </Button>
           </div>
         </div>
       </section>
