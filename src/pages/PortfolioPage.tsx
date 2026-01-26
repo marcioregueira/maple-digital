@@ -171,10 +171,10 @@ const PortfolioPage = () => {
 
             <div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground">
                 Quem é a <span className="text-primary">Maple Digital</span>
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-5 text-muted-foreground text-lg md:text-xl lg:text-xl leading-relaxed">
                 <p>Sou Márcio Regueira, fundador e desenvolvedor da Maple Digital. Ajudo pequenos negócios e empreendedores a conquistarem uma presença digital profissional, moderna e eficiente.</p>
                 <p>A Maple Digital surgiu da vontade de tornar a tecnologia acessível, sem complicação e sem soluções genéricas. Cada projeto é pensado de forma estratégica, respeitando a identidade e os objetivos do seu negócio.</p>
                 <p>Aqui, você tem atendimento personalizado e soluções feitas sob medida do planejamento à entrega final, tudo é desenvolvido com foco em resultado.</p>
