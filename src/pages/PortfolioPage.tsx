@@ -187,27 +187,27 @@ const PortfolioPage = () => {
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 {/* Outermost Circle - Largest */}
                 <div 
-                  className="absolute w-[650px] h-[650px] rounded-full border-[4px] border-primary/[0.08]"
-                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.02)' }}
+                  className="absolute w-[650px] h-[650px] rounded-full border-[6px] border-primary/[0.12]"
+                  style={{ boxShadow: 'inset 0 0 80px hsla(0, 72%, 56%, 0.03)' }}
                 />
                 {/* Second Circle */}
                 <div 
-                  className="absolute w-[520px] h-[520px] rounded-full border-[3.5px] border-primary/[0.1]"
-                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.025)' }}
+                  className="absolute w-[520px] h-[520px] rounded-full border-[5px] border-primary/[0.15]"
+                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.04)' }}
                 />
                 {/* Third Circle */}
                 <div 
-                  className="absolute w-[400px] h-[400px] rounded-full border-[3px] border-primary/[0.13]"
-                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.03)' }}
+                  className="absolute w-[400px] h-[400px] rounded-full border-[4px] border-primary/[0.18]"
+                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.05)' }}
                 />
                 {/* Fourth Circle */}
                 <div 
-                  className="absolute w-[290px] h-[290px] rounded-full border-[2.5px] border-primary/[0.16]"
-                  style={{ boxShadow: 'inset 0 0 30px hsla(0, 72%, 56%, 0.035)' }}
+                  className="absolute w-[290px] h-[290px] rounded-full border-[3.5px] border-primary/[0.22]"
+                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.06)' }}
                 />
                 {/* Innermost Circle - Smallest */}
                 <div 
-                  className="absolute w-[180px] h-[180px] rounded-full border-[2px] border-primary/[0.2] bg-primary/[0.015]"
+                  className="absolute w-[180px] h-[180px] rounded-full border-[3px] border-primary/[0.28] bg-primary/[0.02]"
                 />
               </div>
 
