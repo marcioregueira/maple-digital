@@ -131,6 +131,34 @@ const PortfolioPage = () => {
           }}
         />
         
+        {/* Concentric Circles in Hero Background - Positioned to the right */}
+        <div className="absolute top-1/2 right-[15%] -translate-y-1/2 pointer-events-none">
+          {/* Outermost Circle - Largest */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full border-[6px] border-primary/[0.1]"
+            style={{ boxShadow: 'inset 0 0 100px hsla(0, 72%, 56%, 0.02)' }}
+          />
+          {/* Second Circle */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[5px] border-primary/[0.13]"
+            style={{ boxShadow: 'inset 0 0 80px hsla(0, 72%, 56%, 0.03)' }}
+          />
+          {/* Third Circle */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border-[4px] border-primary/[0.16]"
+            style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.04)' }}
+          />
+          {/* Fourth Circle */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[330px] h-[330px] rounded-full border-[3.5px] border-primary/[0.2]"
+            style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.05)' }}
+          />
+          {/* Innermost Circle - Smallest */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[210px] h-[210px] rounded-full border-[3px] border-primary/[0.25] bg-primary/[0.02]"
+          />
+        </div>
+        
         {/* Decorative Luminous Dots */}
         <div className="absolute top-[15%] left-[10%] w-1 h-1 rounded-full bg-primary/40" />
         <div className="absolute top-[25%] left-[20%] w-1.5 h-1.5 rounded-full bg-primary/25" />
@@ -183,33 +211,6 @@ const PortfolioPage = () => {
             animationFillMode: "both"
           }}>
               
-              {/* Concentric Circles Behind Image */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                {/* Outermost Circle - Largest */}
-                <div 
-                  className="absolute w-[650px] h-[650px] rounded-full border-[6px] border-primary/[0.12]"
-                  style={{ boxShadow: 'inset 0 0 80px hsla(0, 72%, 56%, 0.03)' }}
-                />
-                {/* Second Circle */}
-                <div 
-                  className="absolute w-[520px] h-[520px] rounded-full border-[5px] border-primary/[0.15]"
-                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.04)' }}
-                />
-                {/* Third Circle */}
-                <div 
-                  className="absolute w-[400px] h-[400px] rounded-full border-[4px] border-primary/[0.18]"
-                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.05)' }}
-                />
-                {/* Fourth Circle */}
-                <div 
-                  className="absolute w-[290px] h-[290px] rounded-full border-[3.5px] border-primary/[0.22]"
-                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.06)' }}
-                />
-                {/* Innermost Circle - Smallest */}
-                <div 
-                  className="absolute w-[180px] h-[180px] rounded-full border-[3px] border-primary/[0.28] bg-primary/[0.02]"
-                />
-              </div>
 
               {/* Devices Image with Pulsing Glow */}
               <div className="relative z-10">
