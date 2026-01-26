@@ -125,6 +125,45 @@ const PortfolioPage = () => {
         {/* Subtle Glow Behind Image Area */}
         <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[200px]" />
 
+        {/* Decorative Maple Leaves Background */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Maple Leaf SVG Component */}
+          {[
+            { top: '5%', left: '3%', size: 80, rotate: 15, opacity: 0.08 },
+            { top: '15%', left: '12%', size: 50, rotate: -25, opacity: 0.06 },
+            { top: '8%', right: '8%', size: 70, rotate: 45, opacity: 0.07 },
+            { top: '25%', right: '3%', size: 55, rotate: -10, opacity: 0.05 },
+            { top: '45%', left: '5%', size: 65, rotate: 30, opacity: 0.06 },
+            { top: '60%', left: '2%', size: 45, rotate: -35, opacity: 0.07 },
+            { top: '70%', right: '5%', size: 60, rotate: 20, opacity: 0.06 },
+            { top: '80%', left: '10%', size: 55, rotate: -15, opacity: 0.08 },
+            { top: '35%', right: '12%', size: 40, rotate: 50, opacity: 0.05 },
+            { top: '55%', right: '2%', size: 75, rotate: -40, opacity: 0.07 },
+            { top: '85%', right: '15%', size: 50, rotate: 35, opacity: 0.06 },
+            { top: '12%', left: '45%', size: 35, rotate: -20, opacity: 0.04 },
+            { top: '75%', left: '40%', size: 45, rotate: 25, opacity: 0.05 },
+          ].map((leaf, index) => (
+            <svg
+              key={index}
+              className="absolute text-primary"
+              style={{
+                top: leaf.top,
+                left: leaf.left,
+                right: leaf.right,
+                width: leaf.size,
+                height: leaf.size,
+                transform: `rotate(${leaf.rotate}deg)`,
+                opacity: leaf.opacity,
+              }}
+              viewBox="0 0 100 100"
+              fill="currentColor"
+            >
+              {/* Maple Leaf Path */}
+              <path d="M50 0 L55 20 L75 15 L65 30 L85 35 L65 45 L80 60 L60 55 L65 75 L50 60 L35 75 L40 55 L20 60 L35 45 L15 35 L35 30 L25 15 L45 20 Z M50 60 L50 100" />
+            </svg>
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 animate-fade-in">
             <ArrowLeft className="w-4 h-4" />
