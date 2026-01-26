@@ -168,7 +168,7 @@ const PortfolioPage = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative flex justify-center lg:justify-start">
-              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary/20">
+              <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden shadow-2xl ring-4 ring-primary/20">
                 <img 
                   alt="Fundador Maple Digital" 
                   className="w-full h-full object-cover object-top" 
