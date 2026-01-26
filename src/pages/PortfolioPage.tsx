@@ -204,14 +204,8 @@ const PortfolioPage = () => {
                 <div className="absolute bottom-[35%] right-[30%] w-1.5 h-1.5 rounded-full bg-primary/20" />
               </div>
 
-              {/* Devices Image with Pulsing Glow */}
+              {/* Devices Image */}
               <div className="relative z-10">
-                {/* Pulsing Glow Effect Behind Image - More Intense */}
-                <div className="absolute -inset-16 bg-primary/50 rounded-[50%] blur-[100px] animate-glow-pulse" />
-                {/* Secondary Glow Layer for Extra Depth */}
-                <div className="absolute -inset-8 bg-primary/35 rounded-[50%] blur-[60px] animate-glow-pulse" style={{
-                animationDelay: '0.5s'
-              }} />
                 
                 <img alt="Maple Digital - Sites responsivos em múltiplos dispositivos" className="relative w-full max-w-2xl h-auto object-contain drop-shadow-[0_50px_100px_rgba(0,0,0,0.85)]" src="/lovable-uploads/35a372ca-4493-4152-864a-5d814d210d97.png" />
                 
