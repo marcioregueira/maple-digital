@@ -167,8 +167,14 @@ const PortfolioPage = () => {
       <section className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative">
-              <img alt="Fundador Maple Digital" className="relative w-full max-w-md mx-auto lg:mx-0 rounded-2xl shadow-2xl" src="/lovable-uploads/fb47dce4-c14c-448b-b19a-5474fef998a5.png" />
+            <div className="relative flex justify-center lg:justify-start">
+              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary/20">
+                <img 
+                  alt="Fundador Maple Digital" 
+                  className="w-full h-full object-cover object-top" 
+                  src="/lovable-uploads/fb47dce4-c14c-448b-b19a-5474fef998a5.png" 
+                />
+              </div>
             </div>
 
             <div>
