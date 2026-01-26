@@ -118,15 +118,15 @@ const PortfolioPage = () => {
 
       {/* Hero Section - Devices Image */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Multi-Directional Gradient Background */}
+        {/* Multi-Directional Gradient Background - Subtle */}
         <div 
           className="absolute inset-0" 
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 80% 50%, hsla(0, 50%, 15%, 0.4) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 50% at 70% 40%, hsla(0, 40%, 12%, 0.35) 0%, transparent 50%),
-              radial-gradient(ellipse 50% 80% at 100% 60%, hsla(0, 60%, 18%, 0.25) 0%, transparent 55%),
-              linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 20%, 8%) 50%, hsl(0, 35%, 12%) 100%)
+              radial-gradient(ellipse 80% 60% at 80% 50%, hsla(0, 35%, 12%, 0.25) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 70% 40%, hsla(0, 25%, 10%, 0.2) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 80% at 100% 60%, hsla(0, 40%, 14%, 0.15) 0%, transparent 55%),
+              linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 12%, 6%) 50%, hsl(0, 20%, 8%) 100%)
             `
           }}
         />
