@@ -183,31 +183,31 @@ const PortfolioPage = () => {
             animationFillMode: "both"
           }}>
               
-              {/* Concentric Circles Behind Image */}
+              {/* Concentric Circles Behind Image - Subtle */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 {/* Outermost Circle - Largest */}
                 <div 
-                  className="absolute w-[650px] h-[650px] rounded-full border-[3px] border-primary/[0.08]"
-                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.03)' }}
+                  className="absolute w-[650px] h-[650px] rounded-full border-[2px] border-primary/[0.05]"
+                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.015)' }}
                 />
                 {/* Second Circle */}
                 <div 
-                  className="absolute w-[520px] h-[520px] rounded-full border-[2.5px] border-primary/[0.12]"
-                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.04)' }}
+                  className="absolute w-[520px] h-[520px] rounded-full border-[1.5px] border-primary/[0.07]"
+                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.02)' }}
                 />
                 {/* Third Circle */}
                 <div 
-                  className="absolute w-[400px] h-[400px] rounded-full border-[2px] border-primary/[0.18]"
-                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.05)' }}
+                  className="absolute w-[400px] h-[400px] rounded-full border-[1.5px] border-primary/[0.1]"
+                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.025)' }}
                 />
                 {/* Fourth Circle */}
                 <div 
-                  className="absolute w-[290px] h-[290px] rounded-full border-[2px] border-primary/[0.22]"
-                  style={{ boxShadow: 'inset 0 0 30px hsla(0, 72%, 56%, 0.06)' }}
+                  className="absolute w-[290px] h-[290px] rounded-full border-[1px] border-primary/[0.12]"
+                  style={{ boxShadow: 'inset 0 0 30px hsla(0, 72%, 56%, 0.03)' }}
                 />
                 {/* Innermost Circle - Smallest */}
                 <div 
-                  className="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-primary/[0.25] bg-primary/[0.02]"
+                  className="absolute w-[180px] h-[180px] rounded-full border-[1px] border-primary/[0.15] bg-primary/[0.01]"
                 />
               </div>
 
