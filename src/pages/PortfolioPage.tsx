@@ -118,12 +118,28 @@ const PortfolioPage = () => {
 
       {/* Hero Section - Devices Image */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh]">
-        {/* Clean Dark Background */}
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-secondary/5" />
+        {/* Multi-Directional Gradient Background */}
+        <div 
+          className="absolute inset-0" 
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 80% 50%, hsla(0, 50%, 15%, 0.4) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 70% 40%, hsla(0, 40%, 12%, 0.35) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 80% at 100% 60%, hsla(0, 60%, 18%, 0.25) 0%, transparent 55%),
+              linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(0, 20%, 8%) 50%, hsl(0, 35%, 12%) 100%)
+            `
+          }}
+        />
         
-        {/* Subtle Glow Behind Image Area */}
-        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[200px]" />
+        {/* Decorative Luminous Dots */}
+        <div className="absolute top-[15%] left-[10%] w-1 h-1 rounded-full bg-primary/40" />
+        <div className="absolute top-[25%] left-[20%] w-1.5 h-1.5 rounded-full bg-primary/25" />
+        <div className="absolute top-[45%] left-[8%] w-1 h-1 rounded-full bg-primary/35" />
+        <div className="absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-primary/20" />
+        <div className="absolute top-[75%] left-[25%] w-1 h-1 rounded-full bg-primary/30" />
+        <div className="absolute top-[20%] right-[8%] w-1.5 h-1.5 rounded-full bg-primary/30" />
+        <div className="absolute top-[50%] right-[5%] w-1 h-1 rounded-full bg-primary/25" />
+        <div className="absolute bottom-[20%] right-[12%] w-2 h-2 rounded-full bg-primary/20" />
 
 
         <div className="container mx-auto px-4 relative z-10">
@@ -167,41 +183,32 @@ const PortfolioPage = () => {
             animationFillMode: "both"
           }}>
               
-              {/* Tech Grid Background */}
+              {/* Concentric Circles Behind Image */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                {/* Diagonal Grid Lines */}
-                <svg className="absolute w-[600px] h-[600px] opacity-[0.06]" viewBox="0 0 600 600">
-                  {/* Vertical lines */}
-                  <line x1="100" y1="0" x2="100" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="200" y1="0" x2="200" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="300" y1="0" x2="300" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="400" y1="0" x2="400" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="500" y1="0" x2="500" y2="600" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  {/* Horizontal lines */}
-                  <line x1="0" y1="100" x2="600" y2="100" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="0" y1="200" x2="600" y2="200" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="0" y1="300" x2="600" y2="300" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="0" y1="400" x2="600" y2="400" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  <line x1="0" y1="500" x2="600" y2="500" stroke="currentColor" strokeWidth="1" className="text-primary" />
-                  {/* Diagonal accent lines */}
-                  <line x1="0" y1="0" x2="600" y2="600" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-                  <line x1="600" y1="0" x2="0" y2="600" stroke="currentColor" strokeWidth="0.5" className="text-primary" />
-                </svg>
-
-                {/* Concentric circles */}
-                <div className="absolute w-[500px] h-[500px] rounded-full border border-primary/[0.08]" />
-                <div className="absolute w-[380px] h-[380px] rounded-full border border-primary/[0.06]" />
-                <div className="absolute w-[260px] h-[260px] rounded-full border border-primary/[0.1]" />
-                
-                {/* Corner accent squares */}
-                <div className="absolute -top-8 right-8 w-24 h-24 border border-primary/[0.08] rotate-45" />
-                <div className="absolute bottom-12 -left-8 w-16 h-16 border border-primary/[0.06] rotate-[30deg]" />
-                
-                {/* Tech dots at intersections */}
-                <div className="absolute top-[20%] left-[30%] w-2 h-2 rounded-full bg-primary/20" />
-                <div className="absolute top-[30%] right-[25%] w-1.5 h-1.5 rounded-full bg-primary/25" />
-                <div className="absolute bottom-[25%] left-[25%] w-2.5 h-2.5 rounded-full bg-primary/15" />
-                <div className="absolute bottom-[35%] right-[30%] w-1.5 h-1.5 rounded-full bg-primary/20" />
+                {/* Outermost Circle - Largest */}
+                <div 
+                  className="absolute w-[650px] h-[650px] rounded-full border-[3px] border-primary/[0.08]"
+                  style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.03)' }}
+                />
+                {/* Second Circle */}
+                <div 
+                  className="absolute w-[520px] h-[520px] rounded-full border-[2.5px] border-primary/[0.12]"
+                  style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.04)' }}
+                />
+                {/* Third Circle */}
+                <div 
+                  className="absolute w-[400px] h-[400px] rounded-full border-[2px] border-primary/[0.18]"
+                  style={{ boxShadow: 'inset 0 0 40px hsla(0, 72%, 56%, 0.05)' }}
+                />
+                {/* Fourth Circle */}
+                <div 
+                  className="absolute w-[290px] h-[290px] rounded-full border-[2px] border-primary/[0.22]"
+                  style={{ boxShadow: 'inset 0 0 30px hsla(0, 72%, 56%, 0.06)' }}
+                />
+                {/* Innermost Circle - Smallest */}
+                <div 
+                  className="absolute w-[180px] h-[180px] rounded-full border-[1.5px] border-primary/[0.25] bg-primary/[0.02]"
+                />
               </div>
 
               {/* Devices Image with Pulsing Glow */}
