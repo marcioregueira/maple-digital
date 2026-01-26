@@ -120,11 +120,7 @@ const PortfolioPage = () => {
       <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden min-h-[85vh] flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/lovable-uploads/hero-portfolio-new.png"
-            alt="Maple Digital - Sites responsivos"
-            className="w-full h-full object-cover object-center"
-          />
+          <img src="/lovable-uploads/hero-portfolio-new.png" alt="Maple Digital - Sites responsivos" className="w-full h-full object-cover object-center" />
           {/* Overlay gradient for text readability on left */}
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent" />
         </div>
@@ -142,21 +138,21 @@ const PortfolioPage = () => {
               Portfólio Completo
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground animate-slide-up" style={{
-              animationDelay: "100ms",
-              animationFillMode: "both"
-            }}>
+            animationDelay: "100ms",
+            animationFillMode: "both"
+          }}>
               Transformamos <span className="text-primary">ideias</span> em realidade digital
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{
-              animationDelay: "200ms",
-              animationFillMode: "both"
-            }}>
+            animationDelay: "200ms",
+            animationFillMode: "both"
+          }}>
               Conheça nosso trabalho, processo de desenvolvimento e os diferenciais que fazem da Maple Digital a escolha certa para seu projeto.
             </p>
             <Button onClick={scrollToContact} className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg animate-fade-in" style={{
-              animationDelay: "300ms",
-              animationFillMode: "both"
-            }}>
+            animationDelay: "300ms",
+            animationFillMode: "both"
+          }}>
               Iniciar Projeto
             </Button>
           </div>
@@ -169,18 +165,12 @@ const PortfolioPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative flex justify-center lg:justify-start">
               <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden shadow-2xl ring-4 ring-primary/20">
-                <img 
-                  alt="Fundador Maple Digital" 
-                  className="w-full h-full object-cover object-top" 
-                  src="/lovable-uploads/fb47dce4-c14c-448b-b19a-5474fef998a5.png" 
-                />
+                <img alt="Fundador Maple Digital" className="w-full h-full object-cover object-top" src="/lovable-uploads/fb47dce4-c14c-448b-b19a-5474fef998a5.png" />
               </div>
             </div>
 
             <div>
-              <Badge className="bg-primary/10 text-primary border-primary/30 mb-6">
-                Sobre Nós
-              </Badge>
+              
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
                 Quem é a <span className="text-primary">Maple Digital</span>
               </h2>
