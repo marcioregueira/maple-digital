@@ -131,8 +131,8 @@ const PortfolioPage = () => {
           }}
         />
         
-        {/* Concentric Circles in Hero Background - Positioned to the right */}
-        <div className="absolute top-1/2 right-[20%] lg:right-[18%] -translate-y-[45%] pointer-events-none">
+        {/* Concentric Circles in Hero Background - Centered behind the devices image */}
+        <div className="absolute top-[45%] right-[12%] lg:right-[14%] xl:right-[16%] -translate-y-1/2 pointer-events-none">
           {/* Outermost Circle - Largest */}
           <div 
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full border-[6px] border-primary/[0.1]"
