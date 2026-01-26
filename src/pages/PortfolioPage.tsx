@@ -357,7 +357,7 @@ const PortfolioPage = () => {
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-background shadow-lg shadow-primary/30" onClick={scrollToContact}>
                 Solicitar Orçamento Gratuito
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.open("https://wa.me/5581999999999", "_blank")}>
+              <Button size="lg" variant="outline" onClick={() => window.open("https://wa.me/5514383898465", "_blank")}>
                 Falar pelo WhatsApp
               </Button>
             </div>
