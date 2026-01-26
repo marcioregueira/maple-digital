@@ -132,30 +132,26 @@ const PortfolioPage = () => {
         />
         
         {/* Concentric Circles in Hero Background - Centered behind the devices image */}
-        <div className="absolute top-[45%] right-[12%] lg:right-[14%] xl:right-[16%] -translate-y-1/2 pointer-events-none">
+        <div className="absolute top-[50%] right-[-5%] lg:right-[5%] xl:right-[8%] -translate-y-1/2 pointer-events-none z-[1]">
           {/* Outermost Circle - Largest */}
           <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full border-[6px] border-primary/[0.1]"
-            style={{ boxShadow: 'inset 0 0 100px hsla(0, 72%, 56%, 0.02)' }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border-[5px] border-primary/[0.08]"
           />
           {/* Second Circle */}
           <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[5px] border-primary/[0.13]"
-            style={{ boxShadow: 'inset 0 0 80px hsla(0, 72%, 56%, 0.03)' }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] rounded-full border-[4px] border-primary/[0.1]"
           />
           {/* Third Circle */}
           <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border-[4px] border-primary/[0.16]"
-            style={{ boxShadow: 'inset 0 0 60px hsla(0, 72%, 56%, 0.04)' }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-[4px] border-primary/[0.12]"
           />
           {/* Fourth Circle */}
           <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[330px] h-[330px] rounded-full border-[3.5px] border-primary/[0.2]"
-            style={{ boxShadow: 'inset 0 0 50px hsla(0, 72%, 56%, 0.05)' }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[460px] h-[460px] rounded-full border-[3px] border-primary/[0.15]"
           />
           {/* Innermost Circle - Smallest */}
           <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[210px] h-[210px] rounded-full border-[3px] border-primary/[0.25] bg-primary/[0.02]"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full border-[3px] border-primary/[0.18]"
           />
         </div>
         
