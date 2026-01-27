@@ -12,6 +12,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     projectType: "",
     message: "",
   });
@@ -23,7 +24,7 @@ const Contact = () => {
       title: "✨ Mensagem enviada!",
       description: "Entraremos em contato em até 24 horas.",
     });
-    setFormData({ name: "", email: "", projectType: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
   };
 
   const handleChange = (field: string, value: string) => {
@@ -172,6 +173,18 @@ const Contact = () => {
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     required
+                    className="bg-background/50 border-border h-12"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-foreground font-medium">Telefone</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="(11) 99999-9999"
+                    value={formData.phone}
+                    onChange={(e) => handleChange("phone", e.target.value)}
                     className="bg-background/50 border-border h-12"
                   />
                 </div>
