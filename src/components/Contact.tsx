@@ -4,9 +4,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { Mail, MessageCircle, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,15 +17,39 @@ const Contact = () => {
     projectType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "✨ Mensagem enviada!",
-      description: "Entraremos em contato em até 24 horas.",
-    });
-    setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      if (!data.success) {
+        throw new Error(data.error || "Erro ao enviar mensagem");
+      }
+
+      toast({
+        title: "✨ Mensagem enviada!",
+        description: "Entraremos em contato em até 24 horas.",
+      });
+      setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Erro ao enviar",
+        description: error.message || "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -220,9 +245,19 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   className="w-full bg-primary hover:bg-primary/90 text-background text-lg py-6 shadow-lg shadow-primary/30"
+                  disabled={isSubmitting}
                 >
-                  <Send className="mr-2 w-5 h-5" />
-                  Enviar Mensagem
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 w-5 h-5" />
+                      Enviar Mensagem
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

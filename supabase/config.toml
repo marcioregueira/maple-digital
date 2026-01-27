@@ -2,3 +2,6 @@ project_id = "iqvqamowmibjifpmlixi"
 
 [functions.generate-card-images]
 verify_jwt = false
+
+[functions.send-contact-email]
+verify_jwt = false
