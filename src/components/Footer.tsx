@@ -49,11 +49,11 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:contato@mapledigital.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
+              <a href="mailto:marciosregueira@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group">
                 <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
-                <span>contato@mapledigital.com</span>
+                <span>marciosregueira@gmail.com</span>
               </a>
               
               
