@@ -185,13 +185,14 @@ const Contact = () => {
                     placeholder="(11) 99999-9999"
                     value={formData.phone}
                     onChange={(e) => handleChange("phone", e.target.value)}
+                    required
                     className="bg-background/50 border-border h-12"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="projectType" className="text-foreground font-medium">Tipo de Projeto</Label>
-                  <Select value={formData.projectType} onValueChange={(value) => handleChange("projectType", value)}>
+                  <Select value={formData.projectType} onValueChange={(value) => handleChange("projectType", value)} required>
                     <SelectTrigger className="bg-background/50 border-border h-12">
                       <SelectValue placeholder="Selecione o tipo de projeto" />
                     </SelectTrigger>
