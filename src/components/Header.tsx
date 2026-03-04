@@ -84,7 +84,8 @@ const Header = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-sm transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+      {isMenuOpen && <div className="md:hidden fixed inset-0 top-0 bg-black z-40" onClick={() => setIsMenuOpen(false)} />}
+      <div className={`md:hidden fixed inset-0 top-[88px] bg-black z-50 transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex flex-col gap-6 p-8">
           {isHomePage ? (
             <>
