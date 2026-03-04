@@ -78,16 +78,16 @@ const Services = () => {
         {/* CTA Section */}
         <div className="text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <Card className="max-w-4xl mx-auto border-2 border-primary/30 bg-gradient-to-br from-card/90 to-card/50 backdrop-blur">
-            <CardContent className="p-12">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            <CardContent className="p-6 md:p-12">
+              <h3 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
                 Pronto para começar seu projeto?
               </h3>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-base md:text-lg text-muted-foreground mb-8">
                 Entre em contato e receba uma proposta personalizada em até 24 horas
               </p>
               <Button 
                 size="lg" 
-                className="text-lg px-10 py-6 bg-primary hover:bg-primary/90 text-background"
+                className="text-base md:text-lg px-6 md:px-10 py-5 md:py-6 bg-primary hover:bg-primary/90 text-background w-full md:w-auto"
                 onClick={() => document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Solicitar Orçamento Gratuito
