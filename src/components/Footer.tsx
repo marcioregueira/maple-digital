@@ -8,7 +8,7 @@ const Footer = () => {
     label: "Facebook"
   }, {
     icon: Instagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/mapledigital_",
     label: "Instagram"
   }];
   const quickLinks = [{
