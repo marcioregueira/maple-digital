@@ -24,8 +24,11 @@ const ProjectForm = ({ open, onOpenChange, project, onSaved }: Props) => {
   const [url, setUrl] = useState("");
   const [category, setCategory] = useState<ProjectCategory>("landing");
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string>("");
   const [currentImagePath, setCurrentImagePath] = useState("");
   const [saving, setSaving] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (project) {
@@ -38,7 +41,24 @@ const ProjectForm = ({ open, onOpenChange, project, onSaved }: Props) => {
       setName(""); setDescription(""); setUrl(""); setCategory("landing"); setCurrentImagePath("");
     }
     setImageFile(null);
+    setPreviewUrl("");
   }, [project, open]);
+
+  useEffect(() => {
+    if (!imageFile) { setPreviewUrl(""); return; }
+    const url = URL.createObjectURL(imageFile);
+    setPreviewUrl(url);
+    return () => URL.revokeObjectURL(url);
+  }, [imageFile]);
+
+  const handleFileSelect = (file: File | null) => {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Arquivo inválido", description: "Selecione uma imagem", variant: "destructive" });
+      return;
+    }
+    setImageFile(file);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
