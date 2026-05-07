@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -13,75 +12,39 @@ import {
 import { ExternalLink, Eye, ArrowRight } from "lucide-react";
 import landingImg from "@/assets/portfolio-landing.png";
 import realestateImg from "@/assets/portfolio-institutional.png";
-import barbeariaHenriqueImg from "@/assets/portfolio-barbearia-henrique.png";
-import flatRainhaImg from "@/assets/portfolio-flat-rainha.png";
-import sorveteMuitoBomImg from "@/assets/portfolio-sorvete-muito-bom.png";
-import lavajatoImg from "@/assets/portfolio-lavajato-brilho-maximo.png";
+import { useProjects, resolveImageUrl, type ProjectRow } from "@/hooks/useProjects";
 
-interface Project {
-  name: string;
-  description: string;
-  url: string;
-  image: string;
-}
-
-interface PortfolioCategory {
+interface CategoryView {
   title: string;
   description: string;
-  category: string;
   image: string;
-  projects: Project[];
+  category: "landing" | "institutional";
+  projects: ProjectRow[];
 }
 
-const portfolioData: PortfolioCategory[] = [
-  {
-    title: "Landing Pages",
-    description: "Páginas de alta conversão para captura de leads e lançamentos de produtos ou serviços",
-    category: "Marketing",
-    image: landingImg,
-    projects: [
-      {
-        name: "Barbearia Henrique Dias",
-        description: "Sistema web completo para uma barbearia, combinando uma landing page elegante com um sistema de gestão administrativa robusto.",
-        url: "https://henriquediasbarber.lovable.app",
-        image: barbeariaHenriqueImg,
-      },
-      {
-        name: "Sorvete Muito Bom",
-        description: "Landing page moderna para sorveteria artesanal, com design vibrante, animações suaves e integração com redes sociais.",
-        url: "https://site-sorvete-muito-bom.lovable.app",
-        image: sorveteMuitoBomImg,
-      },
-      {
-        name: "Lavajato Brilho Máximo",
-        description: "Landing page premium para lavajato automotivo, com design moderno em azul e amarelo, animações elegantes e integração com WhatsApp.",
-        url: "https://lavajato-brilho-maximo.vercel.app/",
-        image: lavajatoImg,
-      },
-    ],
-  },
-  {
-    title: "Sites Institucionais",
-    description: "Websites profissionais para empresas com design exclusivo e otimização para buscadores",
-    category: "Website",
-    image: realestateImg,
-    projects: [
-      {
-        name: "Flat Rainha da Serra",
-        description: "Plataforma institucional e de reservas para o Flat Rainha da Serra, oferecendo uma experiência completa para hóspedes.",
-        url: "https://flatrainhadaserra.com.br",
-        image: flatRainhaImg,
-      },
-    ],
-  },
-];
-
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState<PortfolioCategory | null>(null);
+  const { data: projects } = useProjects();
+  const [selected, setSelected] = useState<CategoryView | null>(null);
+
+  const categories: CategoryView[] = useMemo(() => [
+    {
+      title: "Landing Pages",
+      description: "Páginas de alta conversão para captura de leads e lançamentos de produtos ou serviços",
+      image: landingImg,
+      category: "landing",
+      projects: (projects ?? []).filter((p) => p.category === "landing"),
+    },
+    {
+      title: "Sites Institucionais",
+      description: "Websites profissionais para empresas com design exclusivo e otimização para buscadores",
+      image: realestateImg,
+      category: "institutional",
+      projects: (projects ?? []).filter((p) => p.category === "institutional"),
+    },
+  ], [projects]);
 
   return (
     <section id="portfolio" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/5" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -98,14 +61,13 @@ const Portfolio = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {portfolioData.map((category, index) => (
+          {categories.map((category, index) => (
             <Card
               key={index}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelected(category)}
               className="group relative overflow-hidden border border-border bg-card/50 backdrop-blur hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-2 animate-scale-in cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
                 <img
                   src={category.image}
@@ -113,9 +75,6 @@ const Portfolio = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-
-                {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
@@ -125,7 +84,6 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <CardHeader>
                 <CardTitle className="text-2xl group-hover:text-primary transition-colors">
                   {category.title}
@@ -141,12 +99,11 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Modal Dialog */}
-      <Dialog open={!!selectedCategory} onOpenChange={() => setSelectedCategory(null)}>
+      <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-card border-border">
           <DialogHeader>
             <DialogTitle className="text-2xl md:text-3xl text-foreground">
-              {selectedCategory?.title}
+              {selected?.title}
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
               Confira alguns projetos que desenvolvemos nesta categoria
@@ -163,14 +120,14 @@ const Portfolio = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            {selectedCategory?.projects.map((project, index) => (
+            {selected?.projects.map((project) => (
               <Card
-                key={index}
+                key={project.id}
                 className="overflow-hidden border border-border bg-background/50 hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative h-56 sm:h-64 overflow-hidden">
                   <img
-                    src={project.image}
+                    src={resolveImageUrl(project.image_path)}
                     alt={project.name}
                     className="w-full h-full object-cover object-top"
                   />
