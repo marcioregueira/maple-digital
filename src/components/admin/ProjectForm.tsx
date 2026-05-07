@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Upload, ImageIcon, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,8 +24,11 @@ const ProjectForm = ({ open, onOpenChange, project, onSaved }: Props) => {
   const [url, setUrl] = useState("");
   const [category, setCategory] = useState<ProjectCategory>("landing");
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string>("");
   const [currentImagePath, setCurrentImagePath] = useState("");
   const [saving, setSaving] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (project) {
@@ -37,7 +41,24 @@ const ProjectForm = ({ open, onOpenChange, project, onSaved }: Props) => {
       setName(""); setDescription(""); setUrl(""); setCategory("landing"); setCurrentImagePath("");
     }
     setImageFile(null);
+    setPreviewUrl("");
   }, [project, open]);
+
+  useEffect(() => {
+    if (!imageFile) { setPreviewUrl(""); return; }
+    const url = URL.createObjectURL(imageFile);
+    setPreviewUrl(url);
+    return () => URL.revokeObjectURL(url);
+  }, [imageFile]);
+
+  const handleFileSelect = (file: File | null) => {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      toast({ title: "Arquivo inválido", description: "Selecione uma imagem", variant: "destructive" });
+      return;
+    }
+    setImageFile(file);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,9 +132,62 @@ const ProjectForm = ({ open, onOpenChange, project, onSaved }: Props) => {
           </div>
           <div>
             <Label>Imagem</Label>
-            <Input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] ?? null)} />
-            {currentImagePath && !imageFile && (
-              <img src={resolveImageUrl(currentImagePath)} alt="atual" className="mt-2 h-32 object-cover rounded" />
+            <div
+              onClick={() => fileInputRef.current?.click()}
+              onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
+              onDragLeave={() => setDragActive(false)}
+              onDrop={(e) => {
+                e.preventDefault();
+                setDragActive(false);
+                handleFileSelect(e.dataTransfer.files?.[0] ?? null);
+              }}
+              className={`mt-1 relative cursor-pointer rounded-lg border-2 border-dashed transition-all duration-300 overflow-hidden group ${
+                dragActive
+                  ? "border-primary bg-primary/10 scale-[1.02]"
+                  : "border-border hover:border-primary/60 hover:bg-primary/5"
+              }`}
+            >
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => handleFileSelect(e.target.files?.[0] ?? null)}
+              />
+              {previewUrl || currentImagePath ? (
+                <div className="relative">
+                  <img
+                    src={previewUrl || resolveImageUrl(currentImagePath)}
+                    alt="preview"
+                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
+                    <span className="text-xs text-white flex items-center gap-1">
+                      <Upload className="w-3 h-3" /> Trocar imagem
+                    </span>
+                    {imageFile && (
+                      <button
+                        type="button"
+                        onClick={(e) => { e.stopPropagation(); setImageFile(null); }}
+                        className="p-1 rounded-full bg-destructive text-destructive-foreground hover:scale-110 transition-transform"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <ImageIcon className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">Clique ou arraste uma imagem</p>
+                  <p className="text-xs text-muted-foreground mt-1">PNG, JPG ou WEBP</p>
+                </div>
+              )}
+            </div>
+            {imageFile && (
+              <p className="text-xs text-muted-foreground mt-2 truncate">📎 {imageFile.name}</p>
             )}
           </div>
           <Button type="submit" disabled={saving} className="w-full">
